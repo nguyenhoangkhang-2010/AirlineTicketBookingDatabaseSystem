@@ -1,0 +1,311 @@
+﻿@{
+    ViewBag.Title = "Thanh toán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var khachHang = ViewBag.KhachHang as AirLineBookingSystemProject_Group03.Models.KHACHHANG;
+    var taiKhoan = ViewBag.TaiKhoan as AirLineBookingSystemProject_Group03.Models.TaiKhoan;
+    var cartItems = ViewBag.CartItems as List<AirLineBookingSystemProject_Group03.Models.GIOHANG>;
+    decimal tongTien = ViewBag.TongTien ?? 0;
+}
+
+<div class="container mt-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-5 mb-3">
+                <i class="fas fa-credit-card text-primary"></i> Thanh toán
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Flights", "Booking")">Tìm chuyến bay</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Cart", "Booking")">Giỏ hàng</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Thông báo lỗi -->
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-circle"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <!-- Thông tin khách hàng -->
+        <div class="col-lg-7">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-user"></i> Thông tin khách hàng
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form action="@Url.Action("Confirm", "Checkout")" method="post" id="checkoutForm">
+                        @Html.AntiForgeryToken()
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="hoTen" class="form-label">
+                                    <i class="fas fa-user text-muted"></i> Họ và tên <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="hoTen" name="hoTen"
+                                       value="@(khachHang != null ? khachHang.HOTEN : "")" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="soDienThoai" class="form-label">
+                                    <i class="fas fa-phone text-muted"></i> Số điện thoại <span class="text-danger">*</span>
+                                </label>
+                                <input type="tel" class="form-control" id="soDienThoai" name="soDienThoai"
+                                       value="@(khachHang != null ? khachHang.SDT : "")" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope text-muted"></i> Email <span class="text-danger">*</span>
+                                </label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       value="@(taiKhoan != null ? taiKhoan.Email : "")" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="diaChi" class="form-label">
+                                <i class="fas fa-map-marker-alt text-muted"></i> Địa chỉ
+                            </label>
+                            <input type="text" class="form-control" id="diaChi" name="diaChi"
+                                   value="@(khachHang != null ? khachHang.DIACHI : "")">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="ghiChu" class="form-label">
+                                <i class="fas fa-sticky-note text-muted"></i> Ghi chú
+                            </label>
+                            <textarea class="form-control" id="ghiChu" name="ghiChu" rows="3"
+                                      placeholder="Nhập ghi chú nếu có..."></textarea>
+                        </div>
+
+                        <hr />
+
+                        <!-- Phương thức thanh toán -->
+                        <h6 class="mb-3">
+                            <i class="fas fa-wallet text-primary"></i> Phương thức thanh toán
+                        </h6>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="phuongThucTT" id="payment1" value="Tiền mặt" checked>
+                            <label class="form-check-label" for="payment1">
+                                <i class="fas fa-money-bill-wave text-success"></i> Thanh toán tiền mặt tại quầy
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="phuongThucTT" id="payment2" value="Chuyển khoản">
+                            <label class="form-check-label" for="payment2">
+                                <i class="fas fa-university text-info"></i> Chuyển khoản ngân hàng
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="phuongThucTT" id="payment3" value="Thẻ">
+                            <label class="form-check-label" for="payment3">
+                                <i class="fas fa-credit-card text-primary"></i> Thẻ tín dụng / Ghi nợ
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="phuongThucTT" id="payment4" value="Ví điện tử">
+                            <label class="form-check-label" for="payment4">
+                                <i class="fas fa-wallet text-warning"></i> Ví điện tử (Momo, ZaloPay, VNPay)
+                            </label>
+                        </div>
+
+                        <hr />
+
+                        <!-- Điều khoản -->
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">
+                                Tôi đồng ý với <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">điều khoản và điều kiện</a>
+                            </label>
+                        </div>
+
+                        <!-- Nút xác nhận -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg" id="btnConfirm">
+                                <i class="fas fa-check-circle"></i> Xác nhận thanh toán
+                            </button>
+                            <a href="@Url.Action("Cart", "Booking")" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left"></i> Quay lại giỏ hàng
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thông tin đơn hàng -->
+        <div class="col-lg-5">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-receipt"></i> Thông tin đơn hàng
+                    </h5>
+                </div>
+                <div class="card-body">
+                    @if (cartItems != null && cartItems.Any())
+                    {
+                        foreach (var item in cartItems)
+                        {
+                            var chuyenBay = item.CHUYENBAY;
+                            var giaVe = (decimal)(item.GIATIEN ?? 0);
+                            var soLuong = item.SOLUONG ?? 1;
+                            var thanhTien = giaVe * soLuong;
+
+                            <div class="border-bottom pb-3 mb-3">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">
+                                            <i class="fas fa-plane text-primary"></i>
+                                            @(chuyenBay != null ? chuyenBay.MACHUYENBAY : "N/A")
+                                        </h6>
+                                        @if (chuyenBay != null)
+                                        {
+                                            <small class="text-muted d-block">
+                                                @(chuyenBay.TUYENBAY != null && chuyenBay.TUYENBAY.SANBAY != null ? chuyenBay.TUYENBAY.SANBAY.THANHPHO : "")
+                                                →
+                                                @(chuyenBay.TUYENBAY != null && chuyenBay.TUYENBAY.SANBAY1 != null ? chuyenBay.TUYENBAY.SANBAY1.THANHPHO : "")
+                                            </small>
+                                            if (chuyenBay.THOIGIANXUATPHAT != null)
+                                            {
+                                                <small class="text-muted d-block">
+                                                    <i class="fas fa-calendar"></i> @chuyenBay.THOIGIANXUATPHAT.Value.ToString("dd/MM/yyyy HH:mm")
+                                                </small>
+                                            }
+                                        }
+                                        <span class="badge bg-secondary">@item.LOAIVE</span>
+                                        <span class="badge bg-info">@item.HANGVE</span>
+                                        <span class="badge bg-primary">x@soLuong</span>
+                                    </div>
+                                    <div class="text-end">
+                                        <strong class="text-primary">@String.Format("{0:N0}đ", thanhTien)</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tạm tính:</span>
+                            <span>@String.Format("{0:N0}đ", tongTien)</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Thuế & phí:</span>
+                            <span class="text-success">Đã bao gồm</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Khuyến mãi:</span>
+                            <span class="text-danger">-0đ</span>
+                        </div>
+                        <hr />
+                        <div class="d-flex justify-content-between">
+                            <strong class="fs-5">Tổng cộng:</strong>
+                            <strong class="fs-5 text-primary">@String.Format("{0:N0}đ", tongTien)</strong>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted text-center">Không có sản phẩm trong giỏ hàng</p>
+                    }
+                </div>
+            </div>
+
+            <!-- Thông tin hỗ trợ -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h6 class="mb-3">
+                        <i class="fas fa-headset text-primary"></i> Cần hỗ trợ?
+                    </h6>
+                    <p class="mb-2">
+                        <i class="fas fa-phone text-success"></i> Hotline: <strong>1900 1234</strong>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-envelope text-info"></i> Email: <strong>support@airline.vn</strong>
+                    </p>
+                    <p class="mb-0">
+                        <i class="fas fa-clock text-warning"></i> Hỗ trợ 24/7
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Điều khoản -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel">Điều khoản và điều kiện</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>1. Điều kiện đặt vé</h6>
+                <p>Khách hàng phải cung cấp thông tin chính xác khi đặt vé. Mọi thông tin sai lệch có thể dẫn đến việc hủy vé mà không được hoàn tiền.</p>
+
+                <h6>2. Chính sách hoàn/đổi vé</h6>
+                <p>Vé có thể được hoàn hoặc đổi theo quy định của hãng hàng không. Phí hoàn/đổi vé sẽ được tính theo quy định của từng hãng.</p>
+
+                <h6>3. Chính sách bảo mật</h6>
+                <p>Chúng tôi cam kết bảo mật thông tin khách hàng theo quy định của pháp luật Việt Nam.</p>
+
+                <h6>4. Điều kiện vận chuyển</h6>
+                <p>Hành khách phải tuân thủ các quy định về an ninh hàng không và điều kiện vận chuyển của hãng hàng không.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Đã hiểu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 10px;
+    }
+
+    .card-header {
+        border-radius: 10px 10px 0 0 !important;
+    }
+
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    }
+
+    .btn-success {
+        background: linear-gradient(135deg, #28a745, #20c997);
+        border: none;
+    }
+
+        .btn-success:hover {
+            background: linear-gradient(135deg, #218838, #1ba87e);
+        }
+</style>
+
+<script>
+    document.getElementById('checkoutForm').addEventListener('submit', function (e) {
+        var agreeTerms = document.getElementById('agreeTerms');
+        if (!agreeTerms.checked) {
+            e.preventDefault();
+            alert('Vui lòng đồng ý với điều khoản và điều kiện để tiếp tục!');
+            return false;
+        }
+
+        // Disable button để tránh click nhiều lần
+        var btnConfirm = document.getElementById('btnConfirm');
+        btnConfirm.disabled = true;
+        btnConfirm.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang xử lý...';
+    });
+</script>

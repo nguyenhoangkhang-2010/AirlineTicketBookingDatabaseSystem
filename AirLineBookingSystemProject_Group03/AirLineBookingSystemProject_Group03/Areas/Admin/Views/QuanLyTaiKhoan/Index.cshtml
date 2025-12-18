@@ -1,0 +1,309 @@
+﻿@model IEnumerable<AirLineBookingSystemProject_Group03.Models.UserViewModel>
+
+@{
+    ViewBag.Title = "Quản lý Tài Khoản & Phân Quyền";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    :root {
+        --main-green: #198754;
+        --dark-green: #146c43;
+        --light-green: #e8f5e9;
+        --hover-green: #f0fff4;
+    }
+
+    .card-header-airline {
+        background: linear-gradient(135deg, var(--main-green), var(--dark-green));
+        color: white;
+        padding: 15px 20px;
+        border-bottom: 3px solid #0f5132;
+    }
+
+    .avatar-circle {
+        width: 42px;
+        height: 42px;
+        background-color: var(--light-green);
+        color: var(--main-green);
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        box-shadow: 0 2px 4px rgba(25, 135, 84, 0.2);
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: var(--hover-green) !important;
+        transition: all 0.2s;
+    }
+
+    .card-custom {
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+
+    .badge-role-user {
+        background-color: var(--light-green);
+        color: var(--main-green);
+        border: 1px solid var(--main-green);
+    }
+
+    .btn-action {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        border: 1px solid transparent;
+    }
+
+        .btn-action:hover {
+            transform: scale(1.1);
+        }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #b0d4b8;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+</style>
+
+<div class="container-fluid mt-4">
+    <div class="card card-custom">
+        <div class="card-header-airline d-flex justify-content-between align-items-center">
+            <div>
+                <h5 class="m-0 fw-bold text-uppercase">
+                    <i class="fas fa-users-cog me-2"></i> Hệ Thống Tài Khoản
+                </h5>
+                <small class="opacity-75" style="font-size: 0.85rem;">Quản lý phân quyền & thành viên</small>
+            </div>
+            <div>
+                <span class="badge bg-white text-success px-3 py-2 rounded-pill fw-bold shadow-sm">
+                    <i class="fas fa-chart-pie me-1"></i> Tổng: @Model.Count()
+                </span>
+            </div>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0 table-hover">
+                    <thead class="bg-light text-success fw-bold text-uppercase small">
+                        <tr>
+                            <th class="ps-4 py-3">Thành viên</th>
+                            <th>Liên hệ</th>
+                            <th class="text-center">Vai trò</th>
+                            <th class="text-center">Trạng thái</th>
+                            <th class="text-end pe-4">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="ps-4 py-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-circle me-3">
+                                            @item.UserName.Substring(0, 1).ToUpper()
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold text-dark">@item.UserName</div>
+                                            <div class="small text-muted" style="font-size: 0.75rem;">
+                                                <i class="fas fa-id-badge me-1"></i>ID: @item.Id.Substring(0, 6)...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="d-flex flex-column">
+                                        <span class="text-dark fw-bold" style="font-size: 0.9rem;">@item.Email</span>
+                                        <span class="text-muted small">
+                                            <i class="fas fa-phone me-1 text-success"></i>@(item.PhoneNumber ?? "---")
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td class="text-center">
+                                    @if (item.Role == "Admin")
+                                    {
+                                        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger rounded-pill px-3">
+                                            <i class="fas fa-user-shield me-1"></i> Admin
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-role-user rounded-pill px-3">
+                                            <i class="fas fa-user me-1"></i> Khách hàng
+                                        </span>
+                                    }
+                                </td>
+
+                                <td class="text-center">
+                                    @if (item.IsLocked)
+                                    {
+                                        <span class="badge bg-secondary rounded-pill shadow-sm">
+                                            <i class="fas fa-lock me-1"></i> Đã khóa
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success rounded-pill shadow-sm">
+                                            <i class="fas fa-check-circle me-1"></i> Hoạt động
+                                        </span>
+                                    }
+                                </td>
+
+                                <td class="text-end pe-4">
+                                    <div class="d-flex justify-content-end gap-2">
+
+                                        <div class="dropdown">
+                                            <button class="btn btn-action btn-outline-success" data-bs-toggle="dropdown" title="Phân quyền">
+                                                <i class="fas fa-user-tag"></i>
+                                            </button>
+                                            <ul class="dropdown-menu shadow border-0">
+                                                <li><h6 class="dropdown-header text-success">Chọn vai trò</h6></li>
+
+                                                @* --- LỰA CHỌN ADMIN --- *@
+                                                <li>
+                                                    @* Giữ nguyên Admin *@
+                                                    @using (Html.BeginForm("ChangeRole", "QuanLyTaiKhoan", new { id = item.Id, newRole = "Admin" }, FormMethod.Post, new { id = "form-role-admin-" + item.Id }))
+                                                    {
+                                                        @Html.AntiForgeryToken()
+                                                        <a class="dropdown-item" href="javascript:void(0)" onclick="confirmChangeRole('@item.Id', 'Admin')">
+                                                            <i class="fas fa-shield-alt text-danger me-2"></i>Set Admin (Quản lý)
+                                                        </a>
+                                                    }
+                                                </li>
+
+                                                @* --- LỰA CHỌN KHÁCH HÀNG (SỬA Ở ĐÂY) --- *@
+                                                <li>
+                                                    @* Đổi "User" thành "KhachHang" để khớp với DB *@
+                                                    @using (Html.BeginForm("ChangeRole", "QuanLyTaiKhoan", new { id = item.Id, newRole = "KhachHang" }, FormMethod.Post, new { id = "form-role-user-" + item.Id }))
+                                                    {
+                                                        @Html.AntiForgeryToken()
+                                                        <a class="dropdown-item" href="javascript:void(0)" onclick="confirmChangeRole('@item.Id', 'KhachHang')">
+                                                            <i class="fas fa-user text-success me-2"></i>Set Khách hàng
+                                                        </a>
+                                                    }
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        @using (Html.BeginForm("ToggleLock", "QuanLyTaiKhoan", new { id = item.Id }, FormMethod.Post, new { id = "form-lock-" + item.Id }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <button type="button" class="btn btn-action @(item.IsLocked ? "btn-outline-success" : "btn-outline-warning text-dark")"
+                                                    onclick="confirmLock('@item.Id', @item.IsLocked.ToString().ToLower())"
+                                                    title="@(item.IsLocked ? "Mở khóa" : "Khóa tài khoản")">
+                                                <i class="fas @(item.IsLocked ? "fa-lock-open" : "fa-lock")"></i>
+                                            </button>
+                                        }
+
+                                        @using (Html.BeginForm("Delete", "QuanLyTaiKhoan", new { id = item.Id }, FormMethod.Post, new { id = "form-delete-" + item.Id }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <button type="button" class="btn btn-action btn-outline-danger"
+                                                    onclick="confirmDelete('@item.Id', '@item.UserName')"
+                                                    title="Xóa vĩnh viễn">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var msg = '@TempData["Msg"]';
+        if (msg) {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: msg,
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true
+            });
+        }
+    });
+
+    function confirmDelete(id, name) {
+        Swal.fire({
+            title: 'Xóa tài khoản này?',
+            text: "Dữ liệu của [" + name + "] sẽ bị xóa vĩnh viễn.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: '<i class="fas fa-trash-alt me-2"></i>Xóa ngay',
+            cancelButtonText: 'Hủy'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('form-delete-' + id).submit();
+            }
+        })
+    }
+
+    function confirmLock(id, isLocked) {
+        var titleText = isLocked ? "Mở khóa tài khoản?" : "Khóa tài khoản này?";
+        var btnText = isLocked ? "Mở khóa ngay" : "Khóa ngay";
+
+        Swal.fire({
+            title: titleText,
+            text: "Cập nhật quyền truy cập hệ thống.",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: btnText,
+            cancelButtonText: 'Thôi'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('form-lock-' + id).submit();
+            }
+        })
+    }
+
+    function confirmChangeRole(id, role) {
+        Swal.fire({
+            title: 'Cấp quyền ' + role + '?',
+            text: "Thay đổi vai trò người dùng trong hệ thống.",
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Cập nhật',
+            cancelButtonText: 'Hủy'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var formId = (role === 'Admin') ? 'form-role-admin-' : 'form-role-user-';
+                document.getElementById(formId + id).submit();
+            }
+        })
+    }
+</script>

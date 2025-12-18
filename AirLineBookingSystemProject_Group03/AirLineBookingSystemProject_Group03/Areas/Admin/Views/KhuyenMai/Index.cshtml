@@ -1,0 +1,248 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model PagedList.IPagedList<AirLineBookingSystemProject_Group03.Models.KHUYENMAI>
+
+@{
+    ViewBag.Title = "Quản Lý Khuyến Mãi";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var today = DateTime.Today;
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    :root {
+        --main-green: #198754;
+        --light-green: #e8f5e9;
+        --hover-green: #f0fff4;
+    }
+
+    .card-header-airline {
+        background: linear-gradient(135deg, var(--main-green), #146c43);
+        color: white;
+        padding: 15px 20px;
+        border-bottom: 3px solid #0f5132;
+    }
+
+    .card-custom {
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: var(--hover-green) !important;
+        transition: all 0.2s;
+    }
+
+    .promo-code {
+        font-family: 'Courier New', monospace;
+        font-weight: 900;
+        letter-spacing: 1px;
+        color: #d63384;
+        background: #fce4ec;
+        padding: 4px 8px;
+        border-radius: 4px;
+        border: 1px dashed #d63384;
+    }
+
+    .progress {
+        height: 6px;
+        background-color: #e9ecef;
+        margin-top: 5px;
+    }
+
+    .btn-action {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+    }
+
+        .btn-action:hover {
+            transform: scale(1.15);
+        }
+
+    .pagination-container {
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px 20px;
+    }
+
+    .pagination {
+        display: flex;
+        padding-left: 0;
+        list-style: none;
+        gap: 5px;
+    }
+
+        .pagination li a {
+            color: var(--main-green);
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s;
+            background-color: white;
+        }
+
+        .pagination li.active a {
+            background-color: var(--main-green);
+            color: white;
+            border-color: var(--main-green);
+        }
+
+        .pagination li a:hover:not(.active) {
+            background-color: var(--light-green);
+            border-color: var(--main-green);
+        }
+
+        .pagination li.disabled a {
+            color: #6c757d;
+            pointer-events: none;
+            background-color: #fff;
+            border-color: #dee2e6;
+        }
+</style>
+
+<div class="container-fluid mt-4">
+    <div class="card card-custom">
+        <div class="card-header-airline d-flex justify-content-between align-items-center">
+            <div>
+                <h5 class="m-0 fw-bold text-uppercase"><i class="fas fa-tags me-2"></i> QUẢN LÝ KHUYẾN MÃI</h5>
+            </div>
+            <div>
+                <a href="@Url.Action("Create")" class="btn btn-light text-success fw-bold shadow-sm rounded-pill px-3">
+                    <i class="fas fa-plus me-1"></i> Tạo Mã Mới
+                </a>
+            </div>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0 table-hover">
+                    <thead class="bg-light text-success fw-bold text-uppercase small">
+                        <tr>
+                            <th class="ps-4">Mã Code</th>
+                            <th>Thông tin ưu đãi</th>
+                            <th class="text-center">Hiệu lực</th>
+                            <th style="width: 200px;">Tình trạng sử dụng</th>
+                            <th class="text-center">Trạng thái</th>
+                            <th class="text-end pe-4">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            int total = item.SOLUONG ?? 0;
+                            int used = item.DASDUNG ?? 0;
+                            double percent = total > 0 ? ((double)used / total) * 100 : 0;
+
+                            bool isExpired = item.NGAYKETTHUC < today;
+                            bool isActive = item.TRANGTHAI == "Hoạt động" && !isExpired;
+
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="promo-code">@item.ID</div>
+                                    <small class="text-muted d-block mt-1">@item.LOAIKHUYENMAI</small>
+                                </td>
+                                <td>
+                                    <div class="fw-bold text-dark">@item.MOTA</div>
+                                    <div class="small text-primary">
+                                        Giảm:
+                                        @if (item.LOAIKHUYENMAI == "PhanTram")
+                                        {
+                                            <span class="fw-bold">@((item.GIATRI * 100).ToString())%</span>
+                                            if (item.GIATRITOIDA != null)
+                                            { <span class="text-muted">(Tối đa: @string.Format("{0:N0}", item.GIATRITOIDA))</span> }
+                                    }
+                                    else
+                                    {
+                                        <span class="fw-bold">@string.Format("{0:N0} đ", item.GIATRI)</span>
+                                    }
+                                    </div>
+                                </td>
+                                <td class="text-center small">
+                                    <div class="text-muted"><i class="fas fa-calendar-alt me-1"></i> @string.Format("{0:dd/MM/yyyy}", item.NGAYBATDAU)</div>
+                                    <div class="text-danger"><i class="fas fa-arrow-down me-1"></i> @string.Format("{0:dd/MM/yyyy}", item.NGAYKETTHUC)</div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-between small mb-1">
+                                        <span>Đã dùng: <b>@used</b></span>
+                                        <span>Tổng: <b>@total</b></span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar @(percent >= 90 ? "bg-danger" : "bg-success")" role="progressbar" style="width: @percent%"></div>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    @if (!isActive)
+                                    {
+                                        if (isExpired)
+                                        {<span class="badge bg-secondary">Hết hạn</span> }
+                                        else
+                                        { <span class="badge bg-danger">@item.TRANGTHAI</span> }
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">Đang chạy</span>
+                                }
+                                </td>
+                                <td class="text-end pe-4">
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-action btn-outline-primary" title="Sửa">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        @using (Html.BeginForm("Delete", "KhuyenMai", new { id = item.ID }, FormMethod.Post, new { id = "form-delete-" + item.ID }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <button type="button" class="btn btn-action btn-outline-danger" onclick="confirmDelete('@item.ID')" title="Xóa/Hủy">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center bg-light border-top px-4 py-3">
+                <div class="small text-muted">
+                    Hiển thị trang <b>@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)</b> / <b>@Model.PageCount</b>
+                </div>
+                <div>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var msg = '@Html.Raw(TempData["Msg"])';
+    if (msg) Swal.fire({ toast: true, position: 'top-end', icon: 'success', title: msg, showConfirmButton: false, timer: 3000, timerProgressBar: true });
+
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Xóa mã khuyến mãi?',
+            text: "Nếu mã đã sử dụng, trạng thái sẽ chuyển thành 'Đã hủy'.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Đồng ý',
+            cancelButtonText: 'Hủy'
+        }).then((result) => {
+            if (result.isConfirmed) document.getElementById('form-delete-' + id).submit();
+        })
+    }
+</script>

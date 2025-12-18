@@ -1,0 +1,41 @@
+﻿@model AirLineBookingSystemProject_Group03.Models.CHUYENBAY
+
+@{
+    ViewBag.Title = "Xóa chuyến bay";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card border-danger shadow" style="max-width: 550px; margin: 0 auto;">
+        <div class="card-header bg-danger text-white py-3 text-center">
+            <h5 class="m-0 fw-bold"><i class="fas fa-exclamation-triangle me-2"></i>XÁC NHẬN XÓA</h5>
+        </div>
+        <div class="card-body text-center p-5">
+            <div class="text-danger mb-4">
+                <i class="fas fa-trash-alt fa-5x animate__animated animate__pulse animate__infinite"></i>
+            </div>
+
+            <h4 class="text-dark fw-bold mb-2">Chuyến bay: @Model.MACHUYENBAY</h4>
+            <p class="text-muted">
+                Hành trình: <strong>@Model.TUYENBAY.SANBAY.THANHPHO</strong> <i class="fas fa-arrow-right mx-1"></i> <strong>@Model.TUYENBAY.SANBAY1.THANHPHO</strong>
+            </p>
+
+            <div class="alert alert-warning text-start small mt-4">
+                <i class="fas fa-info-circle me-1"></i>
+                <strong>Cảnh báo:</strong> Hành động này sẽ xóa toàn bộ <b>Chi tiết giá vé</b> và các dữ liệu liên quan. Không thể hoàn tác.
+            </div>
+
+            <div class="mt-4 d-flex justify-content-center gap-2">
+                <a href="@Url.Action("Index")" class="btn btn-secondary px-4">Hủy bỏ</a>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger px-4">
+                        <i class="fas fa-check me-2"></i>Đồng ý Xóa
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</div>

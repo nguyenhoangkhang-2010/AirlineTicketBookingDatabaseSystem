@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="529adefd421045babb0356c31450172e" Name="Diagram1" ZoomLevel="69">
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.CHUYENBAY" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.DANHGIA" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.DATVE" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.GIOHANG" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.HANGHANGKHONG" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.KHACHHANG" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.QUANLY" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.SANBAY" Width="1.5" PointX="1.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.TaiKhoan" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.THANHTOAN" Width="1.5" PointX="12.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.TUYENBAY" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.VE" Width="1.5" PointX="10.5" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_CHUYENBAYY_HANGHANGKHONG" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_CHUYENBAYY_TUYENBAY" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_DATVE_MACB" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_GIOHANG_CB" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_DANHGIA_KH" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_DG_HANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_DATVE_MAKH" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_VE_DATVE" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_GIOHANG_KH" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_QUANLY_MAKH" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_QUANLY_TAIKHOAN" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_TUYENBAY_SANBAY1" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_TUYENBAY_SANBAY2" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_VE_SANBAY" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_THANHTOAN_MAVE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.CHI_TIET_CHUYENBAY" Width="1.5" PointX="5.25" PointY="13.5" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.HANGVE" Width="1.5" PointX="3" PointY="22.875" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.LOAIVE" Width="1.5" PointX="3" PointY="25.375" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_CT_CB" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_CT_HV" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_CT_LV" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.KHUYENMAI" Width="1.5" PointX="8.875" PointY="1.875" />
+        <EntityTypeShape EntityType="QUANLYBANVEMAYBAY6Model.sysdiagram" Width="1.5" PointX="1.875" PointY="1.625" />
+        <AssociationConnector Association="QUANLYBANVEMAYBAY6Model.FK_GIOHANG_KHUYENMAI" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,246 @@
+﻿﻿@{
+    ViewBag.Title = "Cài đặt tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-5 mb-3">
+                <i class="fas fa-user-cog text-primary"></i> Cài đặt tài khoản
+            </h1>
+        </div>
+    </div>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-triangle"></i> @ViewBag.Message
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (ViewBag.KhachHang != null)
+    {
+        var khachHang = (AirLineBookingSystemProject_Group03.Models.KHACHHANG)ViewBag.KhachHang;
+        var taiKhoan = (AirLineBookingSystemProject_Group03.Models.TaiKhoan)ViewBag.TaiKhoan;
+        var applicationUser = ViewBag.ApplicationUser;
+
+        <div class="row">
+            <!-- Thông tin tài khoản -->
+            <div class="col-lg-8 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-user"></i> Thông tin tài khoản
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <strong><i class="fas fa-envelope"></i> Email:</strong>
+                            </div>
+                            <div class="col-md-8">
+                                @(applicationUser?.Email ?? taiKhoan?.Email ?? "N/A")
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <strong><i class="fas fa-user-tag"></i> Tên đăng nhập:</strong>
+                            </div>
+                            <div class="col-md-8">
+                                @(taiKhoan?.TenDangNhap ?? "N/A")
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <strong><i class="fas fa-shield-alt"></i> Vai trò:</strong>
+                            </div>
+                            <div class="col-md-8">
+                                <span class="badge bg-info">@(taiKhoan?.VaiTro ?? "Khách hàng")</span>
+                            </div>
+                        </div>
+                        @if (taiKhoan?.NgayTao != null)
+                        {
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <strong><i class="fas fa-calendar-plus"></i> Ngày tạo:</strong>
+                                </div>
+                                <div class="col-md-8">
+                                    @taiKhoan.NgayTao.Value.ToString("dd/MM/yyyy HH:mm")
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thống kê -->
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-chart-bar"></i> Thống kê
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span><i class="fas fa-star text-warning"></i> Số đánh giá:</span>
+                            <span class="badge bg-warning">@(ViewBag.SoDanhGia ?? 0)</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span><i class="fas fa-plane text-primary"></i> Số đặt vé:</span>
+                            <span class="badge bg-primary">@(ViewBag.SoDatVe ?? 0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Thông tin khách hàng -->
+            <div class="col-lg-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-id-card"></i> Thông tin chi tiết khách hàng
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <strong><i class="fas fa-id-badge"></i> Mã khách hàng:</strong>
+                                    <p class="mb-0">@khachHang.MAKH</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <strong><i class="fas fa-user"></i> Họ và tên:</strong>
+                                    <p class="mb-0">@(khachHang.HOTEN ?? "Chưa cập nhật")</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <strong><i class="fas fa-venus-mars"></i> Giới tính:</strong>
+                                    <p class="mb-0">
+                                        @if (!string.IsNullOrEmpty(khachHang.GIOITINH))
+                                        {
+                                            @khachHang.GIOITINH
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">Chưa cập nhật</span>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <strong><i class="fas fa-birthday-cake"></i> Ngày sinh:</strong>
+                                    <p class="mb-0">
+                                        @if (khachHang.NGAYSINH != null)
+                                        {
+                                            @khachHang.NGAYSINH.Value.ToString("dd/MM/yyyy")
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">Chưa cập nhật</span>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <strong><i class="fas fa-phone"></i> Số điện thoại:</strong>
+                                    <p class="mb-0">@(khachHang.SDT ?? "Chưa cập nhật")</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <strong><i class="fas fa-id-card"></i> CCCD/CMND:</strong>
+                                    <p class="mb-0">@(khachHang.CCCD ?? "Chưa cập nhật")</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="info-item">
+                                    <strong><i class="fas fa-map-marker-alt"></i> Địa chỉ:</strong>
+                                    <p class="mb-0">@(khachHang.DIACHI ?? "Chưa cập nhật")</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nút đăng xuất -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-sm border-danger">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">
+                            <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                        </h5>
+                        <p class="card-text text-muted">
+                            Bạn muốn đăng xuất khỏi tài khoản?
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">
+                                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                            </a>
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">
+                                <i class="fas fa-home"></i> Về trang chủ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            <i class="fas fa-exclamation-circle"></i> Không thể tải thông tin tài khoản. Vui lòng thử lại sau.
+        </div>
+    }
+</div>
+
+<style>
+    .info-item {
+        padding: 0.75rem;
+        background-color: #f8f9fa;
+        border-radius: 0.25rem;
+        border-left: 3px solid #007bff;
+    }
+
+        .info-item strong {
+            color: #495057;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: #212529;
+            font-size: 1rem;
+        }
+
+    .card {
+        border: none;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+
+    .card-header {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .badge {
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
+    }
+</style>

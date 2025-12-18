@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Bảng điều khiển";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Active = "Dashboard";
+}
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm" style="border-left: 5px solid #1b5e20;">
+            <div class="card-body">
+                <h6 class="text-muted">TỔNG DOANH THU</h6>
+                <h3>@string.Format("{0:#,##0}", ViewBag.DoanhThu) VNĐ</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm" style="border-left: 5px solid #2e7d32;">
+            <div class="card-body">
+                <h6 class="text-muted">CHUYẾN BAY SẮP TỚI</h6>
+                <h3>@ViewBag.TongChuyenBay</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5">
+    <h5>Hoạt động gần đây</h5>
+    <div class="alert alert-info">
+        Hệ thống đang hoạt động ổn định.
+    </div>
+</div>

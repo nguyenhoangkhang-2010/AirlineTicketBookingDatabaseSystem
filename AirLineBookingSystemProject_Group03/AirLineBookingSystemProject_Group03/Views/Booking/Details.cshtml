@@ -1,0 +1,171 @@
+﻿@model AirLineBookingSystemProject_Group03.Models.FlightDetailViewModel
+@{ ViewBag.Title = "Đặt Vé Chuyến Bay"; }
+
+@section styles {
+    <style>
+        :root {
+            --primary: #1b5e20;
+            --light: #e8f5e9;
+        }
+
+        .ticket-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .ticket-header {
+            padding: 15px;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ticket-body {
+            padding: 20px;
+            display: none;
+            border-top: 1px solid #eee;
+        }
+
+        .price-highlight {
+            color: #d32f2f;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .counter-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .btn-qty {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+
+        .input-qty {
+            width: 40px;
+            text-align: center;
+            border: none;
+            font-weight: bold;
+        }
+    </style>
+}
+
+<div class="container py-5">
+    <h3 class="mb-4 text-success"><i class="fas fa-plane"></i> @Model.NoiDi &rarr; @Model.NoiDen</h3>
+
+    <div class="row">
+        @foreach (var hang in Model.TicketClasses)
+        {
+            <div class="col-12">
+                <div class="ticket-card shadow-sm">
+                    <div class="ticket-header" onclick="toggleTicket('@hang.MaHangVe')">
+                        <div>
+                            <h5 class="m-0 text-success">@hang.TenHangVe</h5>
+                            <small class="text-muted">@hang.TienIch</small>
+                        </div>
+                        <div class="text-end">
+                            <div class="price-highlight">@hang.GiaNguoiLon.ToString("#,##0") đ</div>
+                            <small class="text-muted">/ người lớn</small>
+                            <i class="fas fa-chevron-down ms-2"></i>
+                        </div>
+                    </div>
+
+                    <div class="ticket-body" id="body-@hang.MaHangVe">
+                        <form action="@Url.Action("AddToCart", "Booking")" method="post">
+                            <input type="hidden" name="MaChuyenBay" value="@Model.MaChuyenBay" />
+                            <input type="hidden" name="MaHangVe" value="@hang.MaHangVe" />
+
+                            <input type="hidden" id="p-adt-@hang.MaHangVe" value="@hang.GiaNguoiLon" />
+                            <input type="hidden" id="p-chd-@hang.MaHangVe" value="@hang.GiaTreEm" />
+                            <input type="hidden" id="p-inf-@hang.MaHangVe" value="@hang.GiaEmBe" />
+
+                            <div class="row">
+                                <div class="col-md-7 border-end">
+                                    <div class="counter-box">
+                                        <div><strong>Người lớn</strong> <small class="text-muted">(@hang.GiaNguoiLon.ToString("#,##0") đ)</small></div>
+                                        <div>
+                                            <button type="button" class="btn-qty" onclick="changeQty('@hang.MaHangVe', 'adt', -1)">-</button>
+                                            <input type="text" name="slNguoiLon" id="q-adt-@hang.MaHangVe" value="1" class="input-qty" readonly>
+                                            <button type="button" class="btn-qty" onclick="changeQty('@hang.MaHangVe', 'adt', 1)">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="counter-box">
+                                        <div><strong>Trẻ em</strong> <small class="text-muted">(@hang.GiaTreEm.ToString("#,##0") đ)</small></div>
+                                        <div>
+                                            <button type="button" class="btn-qty" onclick="changeQty('@hang.MaHangVe', 'chd', -1)">-</button>
+                                            <input type="text" name="slTreEm" id="q-chd-@hang.MaHangVe" value="0" class="input-qty" readonly>
+                                            <button type="button" class="btn-qty" onclick="changeQty('@hang.MaHangVe', 'chd', 1)">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="counter-box">
+                                        <div><strong>Em bé</strong> <small class="text-muted">(@hang.GiaEmBe.ToString("#,##0") đ)</small></div>
+                                        <div>
+                                            <button type="button" class="btn-qty" onclick="changeQty('@hang.MaHangVe', 'inf', -1)">-</button>
+                                            <input type="text" name="slEmBe" id="q-inf-@hang.MaHangVe" value="0" class="input-qty" readonly>
+                                            <button type="button" class="btn-qty" onclick="changeQty('@hang.MaHangVe', 'inf', 1)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5 d-flex flex-column justify-content-center align-items-center">
+                                    <div class="text-muted mb-1">Tổng cộng tạm tính</div>
+                                    <h3 class="text-danger fw-bold" id="total-@hang.MaHangVe">
+                                        @hang.GiaNguoiLon.ToString("#,##0") đ
+                                    </h3>
+                                    <button type="submit" class="btn btn-success rounded-pill px-4 mt-2">
+                                        <i class="fas fa-check"></i> Chọn Hạng Vé Này
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        function toggleTicket(code) {
+            $('.ticket-body').slideUp();
+            $('#body-' + code).slideDown();
+        }
+
+        function changeQty(code, type, delta) {
+            let input = $('#q-' + type + '-' + code);
+            let val = parseInt(input.val()) + delta;
+
+            if(type === 'adt' && val < 1) val = 1; 
+            if(val < 0) val = 0;
+
+            input.val(val);
+            calcTotal(code);
+        }
+
+        function calcTotal(code) {
+            let qAdt = parseInt($('#q-adt-' + code).val());
+            let qChd = parseInt($('#q-chd-' + code).val());
+            let qInf = parseInt($('#q-inf-' + code).val());
+
+            let pAdt = parseFloat($('#p-adt-' + code).val());
+            let pChd = parseFloat($('#p-chd-' + code).val());
+            let pInf = parseFloat($('#p-inf-' + code).val());
+
+            let total = (qAdt * pAdt) + (qChd * pChd) + (qInf * pInf);
+
+            $('#total-' + code).text(total.toLocaleString('vi-VN') + ' đ');
+        }
+    </script>
+}

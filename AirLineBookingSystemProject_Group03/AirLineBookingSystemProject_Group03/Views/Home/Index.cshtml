@@ -1,0 +1,187 @@
+﻿@model IEnumerable<AirLineBookingSystemProject_Group03.Models.CHUYENBAY> 
+@{
+    ViewBag.Title = "Trang chủ";
+}
+
+<div class="flight-search-container">
+    <h2 class="search-title">
+        <i class="fas fa-plane"></i> Tìm kiếm chuyến bay
+    </h2>
+
+    <div class="flight-search-form">
+        <div class="mb-3 d-flex gap-3">
+            <button type="button" class="btn-trip active" id="oneWay">
+                <i class="fas fa-arrow-right"></i> Một chiều
+            </button>
+            <button type="button" class="btn-trip" id="roundTrip">
+                <i class="fas fa-exchange-alt"></i> Khứ hồi
+            </button>
+        </div>
+
+        <div class="tab-content" id="searchTypeTabContent">
+
+            <div class="tab-pane active" id="oneWayRoundTrip">
+                @using (Html.BeginForm("Flights", "Booking", FormMethod.Get, new { @class = "form-horizontal" }))
+                {
+                    <div class="row">
+                        <div class="col-md-3 form-group">
+                            <label class="form-label" for="fromCity"><i class="fas fa-plane-departure"></i> Từ</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-plane"></span>
+                                </span>
+                                @Html.TextBox("from", null, new { @class = "form-control", placeholder = "TP HCM" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            <label class="form-label" for="toCity"><i class="fas fa-plane-arrival"></i> Đến</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-map-marker"></span>
+                                </span>
+                                @Html.TextBox("to", null, new { @class = "form-control", placeholder = "Nha Trang" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 form-group">
+                            <label class="form-label" for="departureDate"><i class="fas fa-calendar-alt"></i> Ngày khởi hành</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                                <input type="date" name="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 form-group" id="returnDateWrapper">
+                            <label class="form-label return-label-flex" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                <span><i class="fas fa-calendar-alt"></i> Ngày về</span>
+
+                                <span class="custom-checkbox-wrapper" style="font-weight: normal; font-size: 0.9em; margin-bottom: 0;">
+                                    <input type="checkbox" id="chkRoundTrip">
+                                    <label for="chkRoundTrip">Khứ hồi</label>
+                                </span>
+                            </label>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                                <input type="date" name="returnDate" class="form-control" value="@DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row search-button-row">
+                        <div class="col-md-12">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search"></i> Tìm kiếm
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="tab-pane" id="multiCity">
+                <p class="text-muted text-center">Chức năng tìm kiếm nhiều chặng đang được phát triển.</p>
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label class="form-label"><i class="fas fa-plane-departure"></i> Từ</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-plane"></span></span>
+                            <input type="text" class="form-control" placeholder="Điểm khởi hành" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label"><i class="fas fa-plane-arrival"></i> Đến</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                            <input type="text" class="form-control" placeholder="Điểm đến" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label"><i class="fas fa-calendar-alt"></i> Ngày khởi hành</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            <input type="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:15px;">
+                    <div class="col-md-4 form-group">
+                        <label class="form-label"><i class="fas fa-plane-departure"></i> Từ</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-plane"></span></span>
+                            <input type="text" class="form-control" placeholder="Điểm khởi hành" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label"><i class="fas fa-plane-arrival"></i> Đến</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                            <input type="text" class="form-control" placeholder="Điểm đến" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="form-label"><i class="fas fa-calendar-alt"></i> Ngày khởi hành</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            <input type="date" class="form-control" value="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row search-button-row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="search-button" disabled>
+                            <i class="fas fa-search"></i> Tìm kiếm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const roundTripButton = document.getElementById("roundTrip");
+        const oneWayButton = document.getElementById("oneWay");
+        const returnDateDiv = document.getElementById("returnDateWrapper");
+        const returnDateInput = document.querySelector('input[name="returnDate"]');
+        const chkRoundTrip = document.getElementById("chkRoundTrip");
+
+        if (!chkRoundTrip.checked) {
+            returnDateDiv.style.opacity = '0.5';
+            returnDateInput.disabled = true;
+        }
+
+        roundTripButton.addEventListener("click", function () {
+            roundTripButton.classList.add("active");
+            oneWayButton.classList.remove("active");
+
+            chkRoundTrip.checked = true;
+            returnDateDiv.style.opacity = '1';
+            returnDateInput.disabled = false;
+        });
+
+        oneWayButton.addEventListener("click", function () {
+            oneWayButton.classList.add("active");
+            roundTripButton.classList.remove("active");
+
+            chkRoundTrip.checked = false;
+            returnDateDiv.style.opacity = '0.5';
+            returnDateInput.disabled = true;
+        });
+
+        chkRoundTrip.addEventListener("change", function () {
+            if (this.checked) {
+                roundTripButton.click();
+            } else {
+                oneWayButton.click();
+            }
+        });
+
+        // Ví dụ: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </script>

@@ -1,0 +1,53 @@
+﻿@model AirLineBookingSystemProject_Group03.Models.HANGHANGKHONG
+
+@{
+    ViewBag.Title = "Sửa Hãng Bay";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm border-0" style="max-width: 600px; margin: 0 auto;">
+        <div class="card-header bg-white py-3 border-bottom border-success border-3">
+            <h5 class="m-0 text-success fw-bold text-uppercase"><i class="fas fa-edit me-2"></i>Cập nhật thông tin</h5>
+        </div>
+        <div class="card-body p-4">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.MAHANG)
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold text-muted">Mã Hãng (Không thể sửa)</label>
+                    <input type="text" class="form-control bg-light" value="@Model.MAHANG" readonly />
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Link Ảnh Logo</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-light"><i class="fas fa-image"></i></span>
+                        @Html.EditorFor(model => model.LOGO, new { htmlAttributes = new { @class = "form-control", placeholder = "VD: https://i.imgur.com/abc.png" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.LOGO, "", new { @class = "text-danger" })
+
+                    <div class="mt-2">
+                        <img src="@Model.LOGO" id="preview" style="height: 50px; border: 1px solid #ddd; display: @(string.IsNullOrEmpty(Model.LOGO) ? "none" : "block")" />
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Tên Hãng Hàng Không</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="fas fa-plane"></i></span>
+                        @Html.EditorFor(model => model.TENHANG, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.TENHANG, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="d-flex justify-content-end gap-2 mt-4">
+                    <a href="@Url.Action("Index")" class="btn btn-secondary px-4">Quay lại</a>
+                    <button type="submit" class="btn btn-success px-4 fw-bold">
+                        <i class="fas fa-check me-2"></i>Cập nhật
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

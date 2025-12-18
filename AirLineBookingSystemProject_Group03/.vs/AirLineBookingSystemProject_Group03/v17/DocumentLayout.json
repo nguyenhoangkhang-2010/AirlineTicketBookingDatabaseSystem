@@ -1,0 +1,1189 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|d:\\daihoc\\hocky1_nam2025\\hqt_csdl\\bainhom\\airlinebookingsystemproject_group03\\airlinebookingsystemproject_group03\\airlinebookingsystemproject_group03\\views\\booking\\bookingdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\booking\\bookingdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|d:\\daihoc\\hocky1_nam2025\\hqt_csdl\\bainhom\\airlinebookingsystemproject_group03\\airlinebookingsystemproject_group03\\airlinebookingsystemproject_group03\\models\\bookingdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\bookingdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|d:\\daihoc\\hocky1_nam2025\\hqt_csdl\\bainhom\\airlinebookingsystemproject_group03\\airlinebookingsystemproject_group03\\airlinebookingsystemproject_group03\\views\\booking\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\booking\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\booking\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\booking\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\models\\lichsudatveviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\lichsudatveviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\promotion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\promotion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\khuyenmai\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\khuyenmai\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\khuyenmai\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\khuyenmai\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\khuyenmai\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\khuyenmai\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\controllers\\khuyenmaicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\controllers\\khuyenmaicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\controllers\\promotioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\controllers\\promotioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\checkout\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\checkout\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\models\\directbookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\directbookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\booking\\flights.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\booking\\flights.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\controllers\\quanlytaikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\controllers\\quanlytaikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\quanlytaikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\quanlytaikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\booking\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\booking\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\home\\reviews.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\home\\reviews.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\models\\flightsearchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\flightsearchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\tuyenbay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\tuyenbay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\sanbay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\sanbay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\tuyenbay\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\tuyenbay\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\tuyenbay\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\tuyenbay\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\controllers\\tuyenbaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\controllers\\tuyenbaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\sanbay\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\sanbay\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\sanbay\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\sanbay\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\controllers\\sanbaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\controllers\\sanbaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\models\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\controllers\\backupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\controllers\\backupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\hangbay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\hangbay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\controllers\\hangbaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\controllers\\hangbaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\hangbay\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\hangbay\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\adminarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\adminarearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\models\\adminflightviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\adminflightviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\chuyenbay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\hangbay\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\hangbay\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\hangbay\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\hangbay\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\controllers\\chuyenbaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\controllers\\chuyenbaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\areas\\admin\\views\\backup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\areas\\admin\\views\\backup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\models\\flightdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\flightdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\airlinebookingsystemproject_group03\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F5B73A4F-B1EA-43F2-B41C-FFC9A01FB668}|AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03.csproj|solutionrelative:airlinebookingsystemproject_group03\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 607,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 69,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingDetails.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\BookingDetails.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Booking\\BookingDetails.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\BookingDetails.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Booking\\BookingDetails.cshtml",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAwwHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T12:30:24.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Controllers\\BookingController.cs",
+              "ViewState": "AgIAAGYBAAAAAAAAAAAWwHcBAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T11:48:11.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAowBYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T07:04:30.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "History.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\History.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Booking\\History.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\History.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Booking\\History.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswCwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-14T11:49:11.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Checkout\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Checkout\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Checkout\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Checkout\\Index.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAQwF4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T00:43:26.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookingDetailViewModel.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\BookingDetailViewModel.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\BookingDetailViewModel.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\BookingDetailViewModel.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\BookingDetailViewModel.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA2wB8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T12:24:42.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cart.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\Cart.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Booking\\Cart.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\Cart.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Booking\\Cart.cshtml",
+              "ViewState": "AgIAAEgBAAAAAAAAAAAwwLYBAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T19:20:06.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LichSuDatVeViewModel.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\LichSuDatVeViewModel.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\LichSuDatVeViewModel.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\LichSuDatVeViewModel.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\LichSuDatVeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T11:47:48.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAYwJcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T08:59:31.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\CartController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Controllers\\CartController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T19:23:45.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Controllers\\CheckoutController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\CheckoutController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Controllers\\CheckoutController.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAkwNYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T19:23:56.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Promotion\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Promotion\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Promotion\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Promotion\\Index.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T18:56:45.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAAAAcBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T09:41:56.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "KhuyenMaiController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\KhuyenMaiController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\KhuyenMaiController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\KhuyenMaiController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\KhuyenMaiController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAwwEgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T11:42:26.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T11:45:47.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Create.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Create.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Create.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Create.cshtml",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAmwGYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T11:46:07.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Edit.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Edit.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Edit.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\KhuyenMai\\Edit.cshtml",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAmwHsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T11:46:25.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Create.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Create.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Create.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:54:25.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Success.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Checkout\\Success.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Checkout\\Success.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Checkout\\Success.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Checkout\\Success.cshtml",
+              "ViewState": "AgIAANsAAAAAAAAAAAAwwPsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T00:43:40.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PromotionController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\PromotionController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Controllers\\PromotionController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\PromotionController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Controllers\\PromotionController.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T18:39:22.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DirectBookingViewModel.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\DirectBookingViewModel.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\DirectBookingViewModel.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\DirectBookingViewModel.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\DirectBookingViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T09:07:48.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Flights.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\Flights.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Booking\\Flights.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\Flights.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Booking\\Flights.cshtml",
+              "ViewState": "AgIAAHYBAAAAAAAAAAAAAIMBAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T19:19:22.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AccountViewModels.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\AccountViewModels.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\AccountViewModels.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\AccountViewModels.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\AccountViewModels.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAwEkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T19:30:50.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\QuanLyTaiKhoan\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\QuanLyTaiKhoan\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\QuanLyTaiKhoan\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\QuanLyTaiKhoan\\Index.cshtml",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAiwM0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T16:08:50.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAJsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-06T16:19:49.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAAANUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T07:21:52.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Web.config",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Web.config",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Web.config",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-12-15T07:23:49.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "QuanLyTaiKhoanController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\QuanLyTaiKhoanController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\QuanLyTaiKhoanController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\QuanLyTaiKhoanController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\QuanLyTaiKhoanController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAmwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T16:08:01.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\Details.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Booking\\Details.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Booking\\Details.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Booking\\Details.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-12T19:13:46.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Reviews.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Home\\Reviews.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Home\\Reviews.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Home\\Reviews.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Home\\Reviews.cshtml",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAkwPQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T09:00:24.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T18:56:09.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAHoBAAAAAAAAAAAAAHUBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T06:54:36.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "FlightSearchViewModel.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\FlightSearchViewModel.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\FlightSearchViewModel.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\FlightSearchViewModel.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\FlightSearchViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:21:31.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T17:10:19.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "SanBayController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\SanBayController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\SanBayController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\SanBayController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\SanBayController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwDcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T16:29:13.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Index.cshtml",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T16:29:51.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "TuyenBayController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\TuyenBayController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\TuyenBayController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\TuyenBayController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\TuyenBayController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAgwF0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T17:09:49.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Create.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Create.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Create.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Create.cshtml",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwDAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T17:10:31.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Edit.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Edit.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Edit.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\TuyenBay\\Edit.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwEYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T17:11:06.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Create.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Create.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Create.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Create.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwDMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T16:30:16.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Edit.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Edit.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Edit.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\SanBay\\Edit.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwDIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T16:30:23.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T18:47:33.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-12T18:49:19.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\UserViewModel.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\UserViewModel.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\UserViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T16:07:15.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Startup.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Startup.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Startup.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Startup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T16:05:14.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "BackupController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\BackupController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\BackupController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\BackupController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\BackupController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T09:07:08.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "HangBayController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\HangBayController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\HangBayController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\HangBayController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\HangBayController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T12:53:47.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAHwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:55:38.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Create.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Create.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Create.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Create.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAjwCIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:55:46.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Delete.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Delete.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Delete.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Delete.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAwwCgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:55:04.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "AdminAreaRegistration.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\AdminAreaRegistration.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\AdminAreaRegistration.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\AdminAreaRegistration.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\AdminAreaRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T18:44:21.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "AdminFlightViewModel.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\AdminFlightViewModel.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\AdminFlightViewModel.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\AdminFlightViewModel.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\AdminFlightViewModel.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA0wC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:04:06.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Details.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Details.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Details.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Details.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAwwGAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:54:52.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Edit.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Edit.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Edit.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Edit.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAwwGkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:54:42.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\ChuyenBay\\Index.cshtml",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAwwKwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:54:18.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Delete.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Delete.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Delete.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Delete.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwDIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:56:00.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Edit.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Edit.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Edit.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\HangBay\\Edit.cshtml",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwDQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T12:55:54.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ChuyenBayController.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\ChuyenBayController.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\ChuyenBayController.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\ChuyenBayController.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Controllers\\ChuyenBayController.cs",
+              "ViewState": "AgIAABkBAAAAAAAAAADwvyUBAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T09:12:29.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Backup\\Index.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Backup\\Index.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Backup\\Index.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Areas\\Admin\\Views\\Backup\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAwwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T09:07:41.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Home\\About.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAEcBAAAAAAAAAAAAAE4BAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T08:30:01.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-12T19:18:45.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "FlightDetailViewModel.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\FlightDetailViewModel.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\FlightDetailViewModel.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\FlightDetailViewModel.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\FlightDetailViewModel.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAswAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T19:10:16.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T06:50:57.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T06:52:19.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T19:21:08.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "IdentityModels.cs",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\IdentityModels.cs",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Models\\IdentityModels.cs",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Models\\IdentityModels.cs",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Models\\IdentityModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T19:30:49.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Site.css",
+              "DocumentMoniker": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Content\\Site.css",
+              "RelativeDocumentMoniker": "AirLineBookingSystemProject_Group03\\Content\\Site.css",
+              "ToolTip": "D:\\DaiHoc\\HocKy1_Nam2025\\HQT_CSDL\\BAINHOM\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\AirLineBookingSystemProject_Group03\\Content\\Site.css",
+              "RelativeToolTip": "AirLineBookingSystemProject_Group03\\Content\\Site.css",
+              "ViewState": "AgIAAGMCAAAAAAAAAAAAwHoCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-06T16:20:26.137Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 5,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 29,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

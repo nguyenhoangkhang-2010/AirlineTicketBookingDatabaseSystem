@@ -1,0 +1,539 @@
+﻿@model IEnumerable<AirLineBookingSystemProject_Group03.Models.KHUYENMAI>
+@{
+    ViewBag.Title = "Mã Khuyến Mãi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var appliedPromo = ViewBag.AppliedPromotion as AirLineBookingSystemProject_Group03.Controllers.AppliedPromotionInfo;
+}
+
+<div class="promotion-page">
+    <div class="container py-4">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-5 fw-bold text-gradient mb-3">
+                    <i class="fas fa-tags"></i> Mã Khuyến Mãi
+                </h1>
+                <p class="lead text-muted">
+                    Chọn mã khuyến mãi phù hợp và áp dụng ngay vào đơn hàng của bạn!
+                </p>
+            </div>
+        </div>
+
+        <!-- Thông báo -->
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+                <i class="fas fa-check-circle me-2"></i> @TempData["Success"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+                <i class="fas fa-exclamation-circle me-2"></i> @TempData["Error"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        <!-- Mã đang áp dụng -->
+        @if (appliedPromo != null)
+        {
+            <div class="row mb-4">
+                <div class="col-md-8 mx-auto">
+                    <div class="card border-success shadow-sm">
+                        <div class="card-body bg-success-subtle">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="text-success mb-1">
+                                        <i class="fas fa-check-circle me-2"></i>Mã đang áp dụng
+                                    </h5>
+                                    <p class="mb-0">
+                                        <strong class="fs-5">@appliedPromo.MaKhuyenMai</strong>
+                                        - @appliedPromo.MoTa
+                                        <span class="badge bg-danger ms-2">
+                                            @if (appliedPromo.LoaiKhuyenMai == "PhanTram")
+                                            {
+                                                @:-@((appliedPromo.GiaTri * 100).ToString("0"))%
+                                            }
+                                            else
+                                            {
+                                                @:-@appliedPromo.GiaTri.ToString("N0")đ
+                                            }
+                                        </span>
+                                    </p>
+                                </div>
+                                <a href="@Url.Action("RemovePromotion", "Promotion")"
+                                   class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-times"></i> Xóa mã
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <!-- Nhập mã thủ công -->
+        <div class="row mb-5">
+            <div class="col-md-8 mx-auto">
+                <div class="card shadow border-0 promo-input-card">
+                    <div class="card-body p-4">
+                        <h5 class="card-title text-center mb-4">
+                            <i class="fas fa-keyboard text-primary me-2"></i>
+                            Nhập mã khuyến mãi của bạn
+                        </h5>
+                        @using (Html.BeginForm("ApplyPromotionCode", "Promotion", FormMethod.Post,
+                            new { @class = "promo-form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text bg-white">
+                                    <i class="fas fa-ticket-alt text-primary"></i>
+                                </span>
+                                <input type="text"
+                                       name="promoCode"
+                                       id="promoCodeInput"
+                                       class="form-control"
+                                       placeholder="VD: KM01, KM02..."
+                                       style="text-transform: uppercase;"
+                                       required />
+                                <button type="submit" class="btn btn-primary px-4">
+                                    <i class="fas fa-check me-2"></i>Áp dụng
+                                </button>
+                            </div>
+                            <div id="promoFeedback" class="mt-2"></div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Danh sách mã khuyến mãi -->
+        @if (Model != null && Model.Any())
+        {
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h4>
+                        <i class="fas fa-gift text-warning me-2"></i>
+                        Các mã khuyến mãi đang có
+                        <span class="badge bg-danger rounded-pill ms-2">@Model.Count()</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                @foreach (var promo in Model)
+                {
+                    // Tính số ngày còn lại
+                    int daysLeft = (promo.NGAYKETTHUC.Value - DateTime.Today).Days;
+                    bool isExpiringSoon = daysLeft <= 3 && daysLeft >= 0;
+                    int conLai = (promo.SOLUONG ?? 0) - (promo.DASDUNG ?? 0);
+                    bool isLowStock = conLai <= 10;
+                    bool isPhanTram = promo.LOAIKHUYENMAI == "PhanTram";
+                    double phanTramGiam = (promo.GIATRI ?? 0) * 100;
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="promo-card card h-100 shadow-sm @(isExpiringSoon ? "border-warning border-2" : "")">
+                            <!-- Badge giảm giá -->
+                            <div class="promo-discount-badge">
+                                @if (isPhanTram)
+                                {
+                                    <span class="badge-discount">
+                                        -@phanTramGiam.ToString("0")%
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge-discount badge-fixed">
+                                        -@String.Format("{0:N0}đ", promo.GIATRI)
+                                    </span>
+                                }
+                            </div>
+
+                            <div class="card-body text-center pt-5">
+                                <!-- Mã khuyến mãi -->
+                                <div class="promo-code-wrapper mb-3">
+                                    <div class="promo-code-box" id="code-@promo.ID.Trim()">
+                                        @promo.ID.Trim()
+                                    </div>
+                                    <button type="button"
+                                            class="btn btn-sm btn-outline-secondary copy-btn"
+                                            onclick="copyPromoCode('@promo.ID.Trim()')"
+                                            title="Sao chép mã">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Mô tả -->
+                                <h6 class="card-title text-primary fw-bold mb-2">
+                                    @promo.MOTA
+                                </h6>
+
+                                <!-- Giới hạn giảm tối đa -->
+                                @if (isPhanTram && promo.GIATRITOIDA.HasValue)
+                                {
+                                    <p class="text-muted small mb-2">
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        Giảm tối đa: <strong>@String.Format("{0:N0}đ", promo.GIATRITOIDA)</strong>
+                                    </p>
+                                }
+
+                                <hr />
+
+                                <!-- Thông tin chi tiết -->
+                                <div class="promo-details text-start small">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span><i class="fas fa-calendar-alt text-info me-2"></i>Hiệu lực:</span>
+                                        <span>
+                                            @String.Format("{0:dd/MM/yyyy}", promo.NGAYBATDAU) -
+                                            @String.Format("{0:dd/MM/yyyy}", promo.NGAYKETTHUC)
+                                        </span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span><i class="fas fa-ticket-alt text-warning me-2"></i>Còn lại:</span>
+                                        <span class="badge @(isLowStock ? "bg-danger" : "bg-secondary")">
+                                            @conLai mã
+                                        </span>
+                                    </div>
+
+                                    @if (isExpiringSoon)
+                                    {
+                                        <div class="alert alert-warning py-1 px-2 mb-0 mt-2">
+                                            <small>
+                                                <i class="fas fa-exclamation-triangle me-1"></i>
+                                                <strong>Sắp hết hạn!</strong> Còn @daysLeft ngày
+                                            </small>
+                                        </div>
+                                    }
+
+                                    @if (isLowStock)
+                                    {
+                                        <div class="alert alert-danger py-1 px-2 mb-0 mt-2">
+                                            <small>
+                                                <i class="fas fa-fire me-1"></i>
+                                                <strong>Sắp hết!</strong> Chỉ còn @conLai mã
+                                            </small>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <!-- Footer với nút áp dụng -->
+                            <div class="card-footer bg-transparent border-0 pb-4">
+                                @using (Html.BeginForm("ApplyPromotion", "Promotion", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="maKhuyenMai" value="@promo.ID.Trim()" />
+                                    <button type="submit" class="btn btn-apply-promo w-100">
+                                        <i class="fas fa-shopping-cart me-2"></i>
+                                        Áp dụng ngay
+                                        <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body text-center py-5">
+                            <i class="fas fa-gift fa-4x text-muted mb-3"></i>
+                            <h4>Hiện tại chưa có mã khuyến mãi nào!</h4>
+                            <p class="text-muted">Vui lòng quay lại sau để nhận các ưu đãi hấp dẫn.</p>
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+                                <i class="fas fa-home me-2"></i>Về trang chủ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <!-- Điều khoản sử dụng -->
+        <div class="row mt-5">
+            <div class="col-md-10 mx-auto">
+                <div class="card bg-light border-0">
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-3">
+                            <i class="fas fa-info-circle text-primary me-2"></i>
+                            Điều khoản sử dụng mã khuyến mãi
+                        </h6>
+                        <ul class="small text-muted mb-0">
+                            <li>Mỗi đơn hàng chỉ được áp dụng một mã khuyến mãi</li>
+                            <li>Mã khuyến mãi không được quy đổi thành tiền mặt</li>
+                            <li>Mã khuyến mãi có thể bị giới hạn số tiền giảm tối đa</li>
+                            <li>Thời hạn sử dụng được tính theo ngày, không theo giờ</li>
+                            <li>Vui lòng kiểm tra điều kiện áp dụng của từng mã</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CSS -->
+<style>
+    .promotion-page {
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+        min-height: 100vh;
+    }
+
+    .text-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .promo-input-card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .promo-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+        .promo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+        }
+
+    .promo-discount-badge {
+        position: absolute;
+        top: 15px;
+        right: -35px;
+        transform: rotate(45deg);
+        z-index: 10;
+    }
+
+    .badge-discount {
+        display: inline-block;
+        padding: 8px 40px;
+        background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        box-shadow: 0 3px 10px rgba(255, 65, 108, 0.4);
+    }
+
+    .badge-fixed {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        font-size: 0.85rem;
+        box-shadow: 0 3px 10px rgba(17, 153, 142, 0.4);
+    }
+
+    .promo-code-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .promo-code-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-family: 'Courier New', monospace;
+        font-size: 1.3rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        border: 3px dashed rgba(255, 255, 255, 0.5);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .copy-btn {
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+
+        .copy-btn:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: scale(1.1);
+        }
+
+    .promo-details {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .btn-apply-promo {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 25px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(17, 153, 142, 0.3);
+    }
+
+        .btn-apply-promo:hover {
+            background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+            color: white;
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(17, 153, 142, 0.4);
+        }
+
+    /* Animation */
+    .promo-card {
+        animation: fadeInUp 0.5s ease-out;
+    }
+
+    @@keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .badge-discount {
+        animation: pulse 2s infinite;
+    }
+
+    @@keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .promo-code-box {
+            font-size: 1rem;
+            padding: 10px 20px;
+            letter-spacing: 2px;
+        }
+
+        .badge-discount {
+            font-size: 0.85rem;
+            padding: 6px 35px;
+        }
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    // Copy mã khuyến mãi
+    function copyPromoCode(code) {
+        navigator.clipboard.writeText(code).then(function () {
+            // Sử dụng SweetAlert2 nếu có
+            if (typeof Swal !== 'undefined') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Đã sao chép!',
+                    text: 'Mã "' + code + '" đã được sao chép',
+                    timer: 1500,
+                    showConfirmButton: false,
+                    toast: true,
+                    position: 'top-end'
+                });
+            } else {
+                // Fallback
+                showCopyToast(code);
+            }
+        }).catch(function (err) {
+            // Fallback cho trình duyệt cũ
+            fallbackCopy(code);
+        });
+    }
+
+    // Toast đơn giản
+    function showCopyToast(code) {
+        var toast = document.createElement('div');
+        toast.className = 'position-fixed top-0 end-0 p-3';
+        toast.style.zIndex = '9999';
+        toast.innerHTML = `
+            <div class="toast show bg-success text-white" role="alert">
+                <div class="toast-body">
+                    <i class="fas fa-check-circle me-2"></i>
+                    Đã sao chép mã: <strong>${code}</strong>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(toast);
+        setTimeout(function () {
+            toast.remove();
+        }, 2000);
+    }
+
+    // Fallback copy
+    function fallbackCopy(code) {
+        var textArea = document.createElement('textarea');
+        textArea.value = code;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showCopyToast(code);
+    }
+
+    // Kiểm tra mã khi nhập
+    document.getElementById('promoCodeInput').addEventListener('input', function () {
+        var code = this.value.trim().toUpperCase();
+        var feedback = document.getElementById('promoFeedback');
+
+        if (code.length >= 3) {
+            // Gọi API kiểm tra
+            fetch('@Url.Action("CheckPromotion", "Promotion")?maKhuyenMai=' + encodeURIComponent(code))
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        feedback.innerHTML = `
+                            <div class="text-success small">
+                                <i class="fas fa-check-circle me-1"></i>
+                                <strong>${data.maKhuyenMai}</strong>: ${data.moTa}
+                                (Giảm ${data.giaTriText}, còn ${data.conLai} lượt)
+                            </div>`;
+                    } else {
+                        feedback.innerHTML = `
+                            <div class="text-danger small">
+                                <i class="fas fa-times-circle me-1"></i>
+                                ${data.message}
+                            </div>`;
+                    }
+                })
+                .catch(err => {
+                    feedback.innerHTML = '';
+                });
+        } else {
+            feedback.innerHTML = '';
+        }
+    });
+
+    // Tự động uppercase
+    document.getElementById('promoCodeInput').addEventListener('keyup', function () {
+        this.value = this.value.toUpperCase();
+    });
+</script>

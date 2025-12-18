@@ -1,0 +1,448 @@
+﻿@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <!-- Thông báo -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle"></i> @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-circle"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-5 mb-3">
+                <i class="fas fa-shopping-cart text-primary"></i> Giỏ hàng
+            </h1>
+            <p class="text-muted">
+                Các vé đã đặt nhưng chưa thanh toán
+            </p>
+        </div>
+    </div>
+
+    @if (ViewBag.CartItems != null && ((List<AirLineBookingSystemProject_Group03.Models.GIOHANG>)ViewBag.CartItems).Count > 0)
+    {
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Mã vé</th>
+                                <th>Chuyến bay</th>
+                                <th>Loại vé / Hạng vé</th>
+                                <th>Số lượng</th>
+                                <th>Giá tiền</th>
+                                <th>Khuyến mãi</th>
+                                <th>Thành tiền</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in (List<AirLineBookingSystemProject_Group03.Models.GIOHANG>)ViewBag.CartItems)
+                            {
+                                var giaGoc = (decimal)(item.GIATIEN ?? 0);
+                                var soLuong = item.SOLUONG ?? 1;
+                                var thanhTien = giaGoc * soLuong;
+                                var canApplyPromotion = giaGoc >= 1000000;
+                                var itemId = item.ID;
+
+                                var chuyenBay = item.CHUYENBAY;
+                                var hangHangKhong = chuyenBay?.HANGHANGKHONG;
+
+                                <tr data-item-id="@itemId" data-original-price="@giaGoc">
+                                    <td>
+                                        <strong>@itemId</strong>
+                                    </td>
+                                    <td>
+                                        @if (chuyenBay != null)
+                                        {
+                                            <div>
+                                                <small class="text-muted">Mã chuyến bay:</small>
+                                                <strong>@chuyenBay.MACHUYENBAY</strong>
+                                            </div>
+                                            if (hangHangKhong != null)
+                                            {
+                                                <small class="text-muted">
+                                                    <i class="fas fa-plane"></i> @hangHangKhong.TENHANG
+                                                </small>
+                                            }
+                                            if (chuyenBay.THOIGIANXUATPHAT != null)
+                                            {
+                                                <div>
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-calendar"></i>
+                                                        @chuyenBay.THOIGIANXUATPHAT.Value.ToString("dd/MM/yyyy HH:mm")
+                                                    </small>
+                                                </div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">N/A</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-secondary">@(item.LOAIVE ?? "N/A")</span>
+                                        <br />
+                                        <span class="badge bg-info">@(item.HANGVE ?? "N/A")</span>
+                                    </td>
+                                    <td>
+                                        <strong>@soLuong</strong>
+                                    </td>
+                                    <td>
+                                        <div class="price-original price-original-@itemId">
+                                            <strong class="original-price-@itemId">@String.Format("{0:N0}đ", giaGoc)</strong>
+                                        </div>
+                                        <div class="price-discounted price-discounted-@itemId" style="display: none;">
+                                            <small class="text-muted text-decoration-line-through original-price-display-@itemId">
+                                                @String.Format("{0:N0}đ", giaGoc)
+                                            </small>
+                                            <br />
+                                            <strong class="text-danger new-price-@itemId"></strong>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if (canApplyPromotion)
+                                        {
+                                            <button type="button" class="btn btn-sm btn-outline-primary"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#promotionModal"
+                                                    data-item-id="@itemId"
+                                                    data-item-price="@giaGoc"
+                                                    onclick="showPromotions('@itemId', @giaGoc)">
+                                                <i class="fas fa-tag"></i> Áp dụng KM
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">
+                                                <small>Vé dưới 1 triệu<br />không áp dụng KM</small>
+                                            </span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <strong class="total-price-@itemId">@String.Format("{0:N0}đ", thanhTien)</strong>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-danger"
+                                                onclick="removeItem('@itemId')">
+                                            <i class="fas fa-trash"></i> Xóa
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot class="table-light">
+                            <tr>
+                                <td colspan="6" class="text-end">
+                                    <strong>Tổng cộng:</strong>
+                                </td>
+                                <td colspan="2">
+                                    <strong class="text-primary" id="totalAmount">
+                                        @{
+                                            var total = ((List<AirLineBookingSystemProject_Group03.Models.GIOHANG>)ViewBag.CartItems)
+                                                .Sum(i => (i.GIATIEN ?? 0) * (i.SOLUONG ?? 1));
+                                        }
+                                        @String.Format("{0:N0}đ", total)
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="@Url.Action("Flights", "Booking")" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Tiếp tục mua vé
+                    </a>
+                    <a href="@Url.Action("Index", "Checkout")" class="btn btn-primary btn-lg">
+                        <i class="fas fa-credit-card"></i> Thanh toán
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center" role="alert">
+            <i class="fas fa-shopping-cart fa-3x mb-3 text-muted"></i>
+            <h4>Giỏ hàng trống</h4>
+            <p class="mb-0">Bạn chưa có vé nào trong giỏ hàng.</p>
+            <a href="@Url.Action("Flights", "Booking")" class="btn btn-primary mt-3">
+                <i class="fas fa-plane"></i> Xem vé máy bay
+            </a>
+        </div>
+    }
+</div>
+
+<!-- Modal Khuyến mãi -->
+<div class="modal fade" id="promotionModal" tabindex="-1" aria-labelledby="promotionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="promotionModalLabel">
+                    <i class="fas fa-gift"></i> Chọn khuyến mãi
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <strong>Giá vé gốc: </strong>
+                    <span class="text-primary" id="modalOriginalPrice"></span>
+                </div>
+                <hr />
+                <h6 class="mb-3">Các khuyến mãi có thể áp dụng:</h6>
+                <div id="promotionList">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+    }
+
+    .promotion-item {
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+        .promotion-item:hover {
+            border-color: #007bff;
+            background-color: #f8f9fa;
+        }
+
+        .promotion-item.selected {
+            border-color: #007bff;
+            background-color: #e7f3ff;
+        }
+
+    .price-discounted {
+        color: #dc3545;
+    }
+
+    .toast-container {
+        z-index: 9999;
+    }
+</style>
+
+<script>
+    var currentItemId = null;
+    var currentOriginalPrice = 0;
+    var appliedPromotions = {};
+
+    var promotions = [
+        { id: 1, name: "Giảm 100.000đ", discount: 100000, condition: "Áp dụng cho vé từ 1.000.000đ" },
+        { id: 2, name: "Giảm 200.000đ", discount: 200000, condition: "Áp dụng cho vé từ 1.500.000đ" },
+        { id: 3, name: "Giảm 300.000đ", discount: 300000, condition: "Áp dụng cho vé từ 2.000.000đ" },
+        { id: 4, name: "Giảm 500.000đ", discount: 500000, condition: "Áp dụng cho vé từ 3.000.000đ" }
+    ];
+
+    function showPromotions(itemId, originalPrice) {
+        currentItemId = itemId;
+        currentOriginalPrice = originalPrice;
+
+        document.getElementById('modalOriginalPrice').textContent = formatCurrency(originalPrice);
+
+        var availablePromotions = promotions.filter(function(p) {
+            if (originalPrice >= 3000000) return p.discount <= 500000;
+            if (originalPrice >= 2000000) return p.discount <= 300000;
+            if (originalPrice >= 1500000) return p.discount <= 200000;
+            if (originalPrice >= 1000000) return p.discount <= 100000;
+            return false;
+        });
+
+        var promotionListHtml = '';
+        if (availablePromotions.length > 0) {
+            availablePromotions.forEach(function(promo) {
+                var isSelected = appliedPromotions[itemId] && appliedPromotions[itemId].id === promo.id;
+                promotionListHtml += '<div class="promotion-item ' + (isSelected ? 'selected' : '') + '" onclick="selectPromotion(' + promo.id + ', ' + promo.discount + ', \'' + promo.name + '\')">' +
+                    '<div class="d-flex justify-content-between align-items-center">' +
+                    '<div>' +
+                    '<strong class="text-primary">' + promo.name + '</strong><br />' +
+                    '<small class="text-muted">' + promo.condition + '</small>' +
+                    '</div>' +
+                    '<div class="text-end">' +
+                    '<strong class="text-success">-' + formatCurrency(promo.discount) + '</strong>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+            });
+        } else {
+            promotionListHtml = '<p class="text-muted">Không có khuyến mãi phù hợp.</p>';
+        }
+
+        document.getElementById('promotionList').innerHTML = promotionListHtml;
+    }
+
+    function selectPromotion(promoId, discountAmount, promoName) {
+        if (!currentItemId) return;
+
+        appliedPromotions[currentItemId] = {
+            id: promoId,
+            discount: discountAmount,
+            name: promoName
+        };
+
+        var newPrice = currentOriginalPrice - discountAmount;
+        if (newPrice < 0) newPrice = 0;
+
+        updatePriceDisplay(currentItemId, currentOriginalPrice, newPrice, discountAmount);
+
+        var modal = bootstrap.Modal.getInstance(document.getElementById('promotionModal'));
+        modal.hide();
+
+        updateTotal();
+    }
+
+    function updatePriceDisplay(itemId, originalPrice, newPrice, discountAmount) {
+        var priceOriginalDiv = document.querySelector('.price-original-' + itemId);
+        var priceDiscountedDiv = document.querySelector('.price-discounted-' + itemId);
+
+        if (priceOriginalDiv && priceDiscountedDiv) {
+            priceOriginalDiv.style.display = 'none';
+            priceDiscountedDiv.style.display = 'block';
+
+            var originalDisplay = document.querySelector('.original-price-display-' + itemId);
+            var newPriceDisplay = document.querySelector('.new-price-' + itemId);
+
+            if (originalDisplay) {
+                originalDisplay.textContent = formatCurrency(originalPrice);
+            }
+            if (newPriceDisplay) {
+                newPriceDisplay.textContent = formatCurrency(newPrice);
+            }
+        }
+
+        var row = document.querySelector('tr[data-item-id="' + itemId + '"]');
+        if (row) {
+            var quantityCell = row.querySelector('td:nth-child(4) strong');
+            if (quantityCell) {
+                var quantity = parseInt(quantityCell.textContent) || 1;
+                var totalPrice = newPrice * quantity;
+                var totalPriceElement = document.querySelector('.total-price-' + itemId);
+                if (totalPriceElement) {
+                    totalPriceElement.textContent = formatCurrency(totalPrice);
+                }
+            }
+        }
+    }
+
+    function updateTotal() {
+        var total = 0;
+        document.querySelectorAll('[class*="total-price-"]').forEach(function(el) {
+            var priceText = el.textContent.replace(/[^\d]/g, '');
+            if (priceText) {
+                total += parseInt(priceText);
+            }
+        });
+        document.getElementById('totalAmount').textContent = formatCurrency(total);
+    }
+
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
+    }
+
+    function removeItem(itemId) {
+        if (confirm('Bạn có chắc muốn xóa vé này khỏi giỏ hàng?')) {
+            var row = document.querySelector('tr[data-item-id="' + itemId + '"]');
+            if (row) {
+                row.style.opacity = '0.5';
+            }
+
+            fetch('@Url.Action("DeleteFromCartAjax", "Booking")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'id=' + encodeURIComponent(itemId)
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                if (data.success) {
+                    if (row) {
+                        row.style.transition = 'all 0.3s';
+                        row.style.transform = 'translateX(-100%)';
+                        row.style.opacity = '0';
+
+                        setTimeout(function() {
+                            row.remove();
+                            document.getElementById('totalAmount').textContent = formatCurrency(data.newTotal);
+
+                            var remainingRows = document.querySelectorAll('tbody tr');
+                            if (remainingRows.length === 0) {
+                                location.reload();
+                            }
+                        }, 300);
+                    }
+                    showToast('success', data.message);
+                } else {
+                    if (row) {
+                        row.style.opacity = '1';
+                    }
+                    showToast('error', data.message);
+                }
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+                if (row) {
+                    row.style.opacity = '1';
+                }
+                window.location.href = '@Url.Action("DeleteFromCart", "Booking")?id=' + itemId;
+            });
+        }
+    }
+
+    function showToast(type, message) {
+        var bgClass = type === 'success' ? 'bg-success' : 'bg-danger';
+        var icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+
+        var toastHtml = '<div class="toast-container position-fixed top-0 end-0 p-3">' +
+            '<div class="toast show align-items-center text-white ' + bgClass + '" role="alert">' +
+            '<div class="d-flex">' +
+            '<div class="toast-body">' +
+            '<i class="fas ' + icon + '"></i> ' + message +
+            '</div>' +
+            '<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+
+        document.body.insertAdjacentHTML('beforeend', toastHtml);
+
+        setTimeout(function() {
+            var toastContainer = document.querySelector('.toast-container');
+            if (toastContainer) {
+                toastContainer.remove();
+            }
+        }, 3000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Khởi tạo
+    });
+</script>

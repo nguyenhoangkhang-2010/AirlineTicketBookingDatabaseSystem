@@ -1,0 +1,106 @@
+﻿@model AirLineBookingSystemProject_Group03.Models.FlightDetailsEditViewModel
+
+@{
+    ViewBag.Title = "Cập nhật chuyến bay";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var cb = Model.ChuyenBay;
+}
+
+<div class="container-fluid mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.ChuyenBay.MACHUYENBAY)
+
+                <h6 class="text-success fw-bold border-bottom pb-2 mb-3">1. Thông tin chung chuyến bay</h6>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold text-muted">Mã chuyến bay</label>
+                        @Html.TextBoxFor(m => m.ChuyenBay.MACHUYENBAY, new { @class = "form-control bg-light", @readonly = "readonly" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Hãng Hàng Không</label>
+                        @Html.DropDownListFor(m => m.ChuyenBay.MAHANG, (SelectList)ViewBag.MaHang, htmlAttributes: new { @class = "form-select" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Tuyến bay</label>
+                        @Html.DropDownListFor(m => m.ChuyenBay.MATUYENBAY, (SelectList)ViewBag.MaTuyenBay, htmlAttributes: new { @class = "form-select" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Thời gian bay (phút)</label>
+                        @Html.EditorFor(m => m.ChuyenBay.THOIGIANDUNG, new { htmlAttributes = new { @class = "form-control", type = "number", min = "0" } })
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label fw-bold">Thời gian khởi hành</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="far fa-calendar-alt"></i></span>
+                            <input type="datetime-local" name="ChuyenBay.THOIGIANXUATPHAT" class="form-control"
+                                   value="@(cb.THOIGIANXUATPHAT.HasValue ? cb.THOIGIANXUATPHAT.Value.ToString("yyyy-MM-ddTHH:mm") : "")" />
+                        </div>
+                    </div>
+                </div>
+
+                <h6 class="text-success fw-bold border-bottom pb-2 mb-3 mt-4">2. Cập nhật Giá vé & Số ghế</h6>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 20%">Hạng Vé</th>
+                                <th style="width: 20%">Đối tượng</th>
+                                <th>Giá Vé (VNĐ)</th>
+                                <th style="width: 15%">Số Ghế Phân Bổ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.PriceList.Count; i++)
+                            {
+                                @Html.HiddenFor(m => m.PriceList[i].MaHangVe)
+                                @Html.HiddenFor(m => m.PriceList[i].TenHangVe)
+                                @Html.HiddenFor(m => m.PriceList[i].MaLoaiVe)
+                                @Html.HiddenFor(m => m.PriceList[i].TenLoaiVe)
+
+                                <tr>
+                                    <td class="fw-bold text-primary">@Model.PriceList[i].TenHangVe</td>
+                                    <td>@Model.PriceList[i].TenLoaiVe</td>
+                                    <td>
+                                        <div class="input-group">
+                                            @Html.TextBoxFor(m => m.PriceList[i].Gia, new { @class = "form-control", @type = "number", @min = "0" })
+                                            <span class="input-group-text">đ</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if (Model.PriceList[i].MaLoaiVe == "ADT")
+                                        {
+                                            @Html.TextBoxFor(m => m.PriceList[i].SoLuongGhe, new { @class = "form-control", @type = "number", @min = "0" })
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted small fst-italic">-- Theo ghế NL --</span>
+                                            @Html.HiddenFor(m => m.PriceList[i].SoLuongGhe)
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-12 mt-4 pt-3 border-top d-flex gap-2 justify-content-end">
+                    <a href="@Url.Action("Index")" class="btn btn-secondary px-4">
+                        <i class="fas fa-arrow-left me-2"></i>Quay lại
+                    </a>
+                    <button type="submit" class="btn btn-success px-4">
+                        <i class="fas fa-save me-2"></i>Lưu thay đổi
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

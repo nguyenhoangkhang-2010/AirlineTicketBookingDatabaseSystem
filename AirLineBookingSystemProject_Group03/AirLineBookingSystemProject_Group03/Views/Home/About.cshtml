@@ -1,0 +1,390 @@
+﻿@{
+    ViewBag.Title = "Về chúng tôi";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <style>
+
+        .about-page-wrapper {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #444;
+        }
+
+        .about-hero {
+            position: relative;
+            background-image: url('@Url.Content("~/IMG/banner.jpg")');            
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .about-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(27, 94, 32, 0.8), rgba(46, 125, 50, 0.7));
+            z-index: 1;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* 2. STORY SECTION */
+        .section-padding {
+            padding: 60px 40px;
+        }
+
+        .story-title {
+            color: #1b5e20;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+            .story-title::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                background: #1b5e20;
+                margin-top: 10px;
+            }
+
+        .story-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .story-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+            .story-img:hover {
+                transform: scale(1.02);
+            }
+
+        .stats-section {
+            background-color: #1b5e20;
+            color: #fff;
+            text-align: center;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #81c784; 
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .values-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #eee;
+            height: 100%;
+        }
+
+            .values-card:hover {
+                background: #fff;
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px rgba(27, 94, 32, 0.1);
+                border-bottom: 4px solid #1b5e20;
+            }
+
+        .values-icon {
+            width: 70px;
+            height: 70px;
+            background: #e8f5e9;
+            color: #1b5e20;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 20px;
+        }
+
+        .values-card h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .team-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+            .team-avatar img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .team-name {
+            font-weight: 700;
+            color: #1b5e20;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            font-size: 0.9rem;
+            color: #777;
+            font-style: italic;
+        }
+
+        /* CTA BUTTON */
+        .btn-cta {
+            background-color: #1b5e20;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: 2px solid #1b5e20;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .btn-cta:hover {
+                background-color: transparent;
+                color: #1b5e20;
+            }
+    </style>
+}
+
+<div class="about-page-wrapper">
+
+    <div class="about-hero">
+        <div class="about-hero-overlay"></div>
+        <div class="about-hero-content">
+            <h1>SkyBooker</h1>
+            <p>Không chỉ là bay, đó là hành trình kết nối những giấc mơ.</p>
+        </div>
+    </div>
+
+    <div class="section-padding">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="story-title">Câu Chuyện Của Chúng Tôi</h2>
+                <div class="story-text">
+                    <p>
+                        Được thành lập vào năm 2024 bởi nhóm sinh viên đầy nhiệt huyết (Nhóm 03), <strong>SkyBooker</strong> ra đời với sứ mệnh đơn giản hóa quy trình đặt vé máy bay cho người Việt. Chúng tôi hiểu rằng, mỗi chuyến bay không chỉ là sự di chuyển, mà là sự khởi đầu cho những cơ hội mới, những cuộc đoàn tụ và những khám phá bất tận.
+                    </p>
+                    <p>
+                        Từ một dự án đồ án môn học, SkyBooker hướng tới việc xây dựng một hệ thống đặt vé thông minh, nhanh chóng và minh bạch. Chúng tôi cam kết mang lại trải nghiệm người dùng tốt nhất với giao diện thân thiện và quy trình thanh toán an toàn.
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <img src="~/IMG/sign.png" alt="Signature" style="height: 40px; opacity: 0.6;">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=2070&auto=format&fit=crop" alt="About SkyBooker" class="story-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="section-padding stats-section">
+        <div class="row">
+            <div class="col-md-3 col-6 mb-4 mb-md-0">
+                <div class="stat-item">
+                    <i class="fas fa-plane-departure"></i>
+                    <span class="stat-number">1,200+</span>
+                    <span class="stat-label">Chuyến bay/Ngày</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4 mb-md-0">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Khách hàng</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-item">
+                    <i class="fas fa-globe-asia"></i>
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Điểm đến</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-item">
+                    <i class="fas fa-award"></i>
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Hài lòng</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-padding bg-light">
+        <div class="text-center mb-5">
+            <h2 class="story-title" style="margin-bottom: 10px;">Giá Trị Cốt Lõi</h2>
+            <p class="text-muted">Điều gì làm nên sự khác biệt của SkyBooker?</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="values-card">
+                    <div class="values-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>An Toàn Tuyệt Đối</h4>
+                    <p class="text-muted text-sm">An toàn của hành khách là ưu tiên hàng đầu. Chúng tôi chỉ hợp tác với các hãng hàng không uy tín nhất.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="values-card">
+                    <div class="values-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Đúng Giờ</h4>
+                    <p class="text-muted text-sm">Chúng tôi trân trọng thời gian của bạn. Hệ thống cập nhật lịch bay thời gian thực chính xác nhất.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="values-card">
+                    <div class="values-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Tận Tâm Phục Vụ</h4>
+                    <p class="text-muted text-sm">Đội ngũ hỗ trợ khách hàng hoạt động 24/7 để giải quyết mọi thắc mắc của bạn.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-padding">
+        <div class="text-center mb-5">
+            <h2 class="story-title">Đội Ngũ Phát Triển (Nhóm 03)</h2>
+            <p class="text-muted">Những mảnh ghép tạo nên SkyBooker</p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="@Url.Content("~/Content/Images/avatar-male.png")" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" alt="Thành Đạt">
+                    </div>
+                    <h5 class="team-name">Hoàng Khang</h5>
+                    <p class="team-role">Trưởng nhóm / Backend</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="@Url.Content("~/Content/Images/avatar-male.png")" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135768.png'" alt="Thuận Phát">
+                    </div>
+                    <h5 class="team-name">Thuận Phát</h5>
+                    <p class="team-role">Database Admin</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="@Url.Content("~/Content/Images/avatar-female.png")" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135789.png'" alt="Nhã Phương">
+                    </div>
+                    <h5 class="team-name">Nhã Phương</h5>
+                    <p class="team-role">UI/UX Designer</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="@Url.Content("~/Content/Images/avatar-male.png")" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135823.png'" alt="Hoàng Khang">
+                    </div>
+                    <h5 class="team-name">Thành Đạt</h5>
+                    <p class="team-role">Frontend Developer</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="@Url.Content("~/Content/Images/avatar-male.png")" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135755.png'" alt="Bảo Khang">
+                    </div>
+                    <h5 class="team-name">Bảo Khang</h5>
+                    <p class="team-role">Tester / QA</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center pb-5 mb-3">
+        <h3>Bạn đã sẵn sàng cho chuyến đi tiếp theo?</h3>
+        <p class="mb-4 text-muted">Đặt vé ngay hôm nay để nhận ưu đãi hấp dẫn từ SkyBooker.</p>
+        <a href="@Url.Action("Flights", "Booking")" class="btn-cta">
+            <i class="fas fa-ticket-alt me-2"></i> Đặt Vé Ngay
+        </a>
+    </div>
+
+</div>

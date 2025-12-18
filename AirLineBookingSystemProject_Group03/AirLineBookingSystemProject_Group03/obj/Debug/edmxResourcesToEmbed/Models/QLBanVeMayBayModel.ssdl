@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QUANLYBANVEMAYBAY6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHI_TIET_CHUYENBAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MACHUYENBAY" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAHANGVE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MALOAIVE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="GIA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SOLUONGGHE" Type="int" />
+  </EntityType>
+  <EntityType Name="CHUYENBAY">
+    <Key>
+      <PropertyRef Name="MACHUYENBAY" />
+    </Key>
+    <Property Name="MACHUYENBAY" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MATUYENBAY" Type="char" MaxLength="10" />
+    <Property Name="MAHANG" Type="char" MaxLength="10" />
+    <Property Name="SOLUONGGHE" Type="int" />
+    <Property Name="THOIGIANDUNG" Type="int" />
+    <Property Name="THOIGIANXUATPHAT" Type="datetime" />
+    <Property Name="THOIGIANDEN" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DANHGIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKH" Type="char" MaxLength="10" />
+    <Property Name="MAHANG" Type="char" MaxLength="10" />
+    <Property Name="SOSAO" Type="int" />
+    <Property Name="NOIDUNG" Type="nvarchar" MaxLength="255" />
+    <Property Name="NGAYDG" Type="date" />
+  </EntityType>
+  <EntityType Name="DATVE">
+    <Key>
+      <PropertyRef Name="MADATVE" />
+    </Key>
+    <Property Name="MADATVE" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKH" Type="char" MaxLength="10" />
+    <Property Name="MACHUYENBAY" Type="char" MaxLength="10" />
+    <Property Name="NGAYDAT" Type="date" />
+    <Property Name="TRANGTHAI" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GIOHANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKH" Type="char" MaxLength="10" />
+    <Property Name="MACHUYENBAY" Type="char" MaxLength="10" />
+    <Property Name="LOAIVE" Type="nvarchar" MaxLength="20" />
+    <Property Name="HANGVE" Type="nvarchar" MaxLength="20" />
+    <Property Name="GIATIEN" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="NGAYTHEM" Type="date" />
+    <Property Name="MAKHUYENMAI" Type="varchar" MaxLength="10" />
+    <Property Name="GIATIEN_SAUKM" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="HANGHANGKHONG">
+    <Key>
+      <PropertyRef Name="MAHANG" />
+    </Key>
+    <Property Name="MAHANG" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENHANG" Type="nvarchar" MaxLength="50" />
+    <Property Name="LOGO" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HANGVE">
+    <Key>
+      <PropertyRef Name="MAHANGVE" />
+    </Key>
+    <Property Name="MAHANGVE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TENHANGVE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TIENICH" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="GIOITINH" Type="nvarchar" MaxLength="3" />
+    <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="char" MaxLength="12" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+    <Property Name="CCCD" Type="char" MaxLength="12" />
+    <Property Name="NGAYSINH" Type="date" />
+    <Property Name="MaTk" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="KHUYENMAI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MOTA" Type="nvarchar" MaxLength="255" />
+    <Property Name="GIATRI" Type="float" />
+    <Property Name="LOAIKHUYENMAI" Type="nvarchar" MaxLength="20" />
+    <Property Name="GIATRITOIDA" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="NGAYBATDAU" Type="date" />
+    <Property Name="NGAYKETTHUC" Type="date" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="DASDUNG" Type="int" />
+    <Property Name="TRANGTHAI" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="LOAIVE">
+    <Key>
+      <PropertyRef Name="MALOAIVE" />
+    </Key>
+    <Property Name="MALOAIVE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TENLOAIVE" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QUANLY">
+    <Key>
+      <PropertyRef Name="MAQL" />
+    </Key>
+    <Property Name="MAQL" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENQUANLY" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaTk" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SANBAY">
+    <Key>
+      <PropertyRef Name="MASANBAY" />
+    </Key>
+    <Property Name="MASANBAY" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENSANBAY" Type="nvarchar" MaxLength="100" />
+    <Property Name="THANHPHO" Type="nvarchar" MaxLength="50" />
+    <Property Name="DATNUOC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="MaTK" />
+    </Key>
+    <Property Name="MaTK" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TenDangNhap" Type="varchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="255" />
+    <Property Name="VaiTro" Type="varchar" MaxLength="20" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="THANHTOAN">
+    <Key>
+      <PropertyRef Name="MATT" />
+    </Key>
+    <Property Name="MATT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MAVE" Type="varchar" MaxLength="10" />
+    <Property Name="NGAYGD" Type="date" />
+    <Property Name="PHUONGTHUCTT" Type="nvarchar" MaxLength="50" />
+    <Property Name="TONGTIEN" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="TUYENBAY">
+    <Key>
+      <PropertyRef Name="MATUYENBAY" />
+    </Key>
+    <Property Name="MATUYENBAY" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MASANBAYDI" Type="char" MaxLength="10" />
+    <Property Name="MASANBAYVE" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="VE">
+    <Key>
+      <PropertyRef Name="MAVE" />
+    </Key>
+    <Property Name="MAVE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MADATVE" Type="char" MaxLength="10" />
+    <Property Name="MASANBAY" Type="char" MaxLength="10" />
+    <Property Name="GIATIEN" Type="float" />
+    <Property Name="LOAIVE" Type="nvarchar" MaxLength="20" />
+    <Property Name="HANGVE" Type="nvarchar" MaxLength="20" />
+    <Property Name="MAGHE" Type="char" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_CHUYENBAYY_HANGHANGKHONG">
+    <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="0..1" />
+    <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HANGHANGKHONG">
+        <PropertyRef Name="MAHANG" />
+      </Principal>
+      <Dependent Role="CHUYENBAY">
+        <PropertyRef Name="MAHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUYENBAYY_TUYENBAY">
+    <End Role="TUYENBAY" Type="Self.TUYENBAY" Multiplicity="0..1" />
+    <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TUYENBAY">
+        <PropertyRef Name="MATUYENBAY" />
+      </Principal>
+      <Dependent Role="CHUYENBAY">
+        <PropertyRef Name="MATUYENBAY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_CB">
+    <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="1" />
+    <End Role="CHI_TIET_CHUYENBAY" Type="Self.CHI_TIET_CHUYENBAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUYENBAY">
+        <PropertyRef Name="MACHUYENBAY" />
+      </Principal>
+      <Dependent Role="CHI_TIET_CHUYENBAY">
+        <PropertyRef Name="MACHUYENBAY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_HV">
+    <End Role="HANGVE" Type="Self.HANGVE" Multiplicity="1" />
+    <End Role="CHI_TIET_CHUYENBAY" Type="Self.CHI_TIET_CHUYENBAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HANGVE">
+        <PropertyRef Name="MAHANGVE" />
+      </Principal>
+      <Dependent Role="CHI_TIET_CHUYENBAY">
+        <PropertyRef Name="MAHANGVE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_LV">
+    <End Role="LOAIVE" Type="Self.LOAIVE" Multiplicity="1" />
+    <End Role="CHI_TIET_CHUYENBAY" Type="Self.CHI_TIET_CHUYENBAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIVE">
+        <PropertyRef Name="MALOAIVE" />
+      </Principal>
+      <Dependent Role="CHI_TIET_CHUYENBAY">
+        <PropertyRef Name="MALOAIVE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DANHGIA_KH">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="DANHGIA">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DATVE_MACB">
+    <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="0..1" />
+    <End Role="DATVE" Type="Self.DATVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUYENBAY">
+        <PropertyRef Name="MACHUYENBAY" />
+      </Principal>
+      <Dependent Role="DATVE">
+        <PropertyRef Name="MACHUYENBAY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DATVE_MAKH">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DATVE" Type="Self.DATVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="DATVE">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DG_HANG">
+    <End Role="HANGHANGKHONG" Type="Self.HANGHANGKHONG" Multiplicity="0..1" />
+    <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HANGHANGKHONG">
+        <PropertyRef Name="MAHANG" />
+      </Principal>
+      <Dependent Role="DANHGIA">
+        <PropertyRef Name="MAHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GIOHANG_CB">
+    <End Role="CHUYENBAY" Type="Self.CHUYENBAY" Multiplicity="0..1" />
+    <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUYENBAY">
+        <PropertyRef Name="MACHUYENBAY" />
+      </Principal>
+      <Dependent Role="GIOHANG">
+        <PropertyRef Name="MACHUYENBAY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GIOHANG_KH">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="GIOHANG">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GIOHANG_KHUYENMAI">
+    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="0..1" />
+    <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUYENMAI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GIOHANG">
+        <PropertyRef Name="MAKHUYENMAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUANLY_MAKH">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTK" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MaTk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUANLY_TAIKHOAN">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTK" />
+      </Principal>
+      <Dependent Role="QUANLY">
+        <PropertyRef Name="MaTk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_THANHTOAN_MAVE">
+    <End Role="VE" Type="Self.VE" Multiplicity="0..1" />
+    <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VE">
+        <PropertyRef Name="MAVE" />
+      </Principal>
+      <Dependent Role="THANHTOAN">
+        <PropertyRef Name="MAVE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TUYENBAY_SANBAY1">
+    <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="0..1" />
+    <End Role="TUYENBAY" Type="Self.TUYENBAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANBAY">
+        <PropertyRef Name="MASANBAY" />
+      </Principal>
+      <Dependent Role="TUYENBAY">
+        <PropertyRef Name="MASANBAYDI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TUYENBAY_SANBAY2">
+    <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="0..1" />
+    <End Role="TUYENBAY" Type="Self.TUYENBAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANBAY">
+        <PropertyRef Name="MASANBAY" />
+      </Principal>
+      <Dependent Role="TUYENBAY">
+        <PropertyRef Name="MASANBAYVE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VE_DATVE">
+    <End Role="DATVE" Type="Self.DATVE" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATVE">
+        <PropertyRef Name="MADATVE" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="MADATVE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VE_SANBAY">
+    <End Role="SANBAY" Type="Self.SANBAY" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANBAY">
+        <PropertyRef Name="MASANBAY" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="MASANBAY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_TongTienGioHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="decimal">
+    <Parameter Name="MAKH" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="FUNC_AVGTUOIKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float" />
+  <Function Name="FUNC_KIEMTRASOGHETRONGCHUYENBAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="MACHUYENBAY" Type="char" Mode="In" />
+  </Function>
+  <Function Name="FUNC_TONGVEKHACHHANGDAT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="MAKH" Type="char" Mode="In" />
+  </Function>
+  <Function Name="PR_DATVE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MAKH" Type="char" Mode="In" />
+    <Parameter Name="MACHUYENBAY" Type="char" Mode="In" />
+    <Parameter Name="SOLUONG" Type="int" Mode="In" />
+    <Parameter Name="GIATIENMOIVE" Type="float" Mode="In" />
+    <Parameter Name="LOAIVE" Type="nvarchar" Mode="In" />
+    <Parameter Name="HANGVE" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PROC_HuyDatVe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaDatVe" Type="char" Mode="In" />
+  </Function>
+  <Function Name="PROC_TimChuyenBay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ThanhPhoDi" Type="nvarchar" Mode="In" />
+    <Parameter Name="ThanhPhoDen" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgayBay" Type="date" Mode="In" />
+  </Function>
+  <Function Name="SP_BackupDiff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_BackupFull" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_BackupLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetDatVe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MAKH" Type="char" Mode="In" />
+    <Parameter Name="TRANGTHAI" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SearchKhachHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MAKH" Type="char" Mode="In" />
+    <Parameter Name="HOTEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="char" Mode="In" />
+    <Parameter Name="CCCD" Type="char" Mode="In" />
+    <Parameter Name="DIACHI" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SearchVe_AllStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MAVE" Type="varchar" Mode="In" />
+    <Parameter Name="HANGVE" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOAIVE" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateVe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MAVE" Type="varchar" Mode="In" />
+    <Parameter Name="MASANBAY" Type="char" Mode="In" />
+    <Parameter Name="GIATIEN" Type="float" Mode="In" />
+    <Parameter Name="LOAIVE" Type="nvarchar" Mode="In" />
+    <Parameter Name="HANGVE" Type="nvarchar" Mode="In" />
+    <Parameter Name="MAGHE" Type="char" Mode="In" />
+  </Function>
+  <EntityContainer Name="QUANLYBANVEMAYBAY6ModelStoreContainer">
+    <EntitySet Name="CHI_TIET_CHUYENBAY" EntityType="Self.CHI_TIET_CHUYENBAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHUYENBAY" EntityType="Self.CHUYENBAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DANHGIA" EntityType="Self.DANHGIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DATVE" EntityType="Self.DATVE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GIOHANG" EntityType="Self.GIOHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HANGHANGKHONG" EntityType="Self.HANGHANGKHONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HANGVE" EntityType="Self.HANGVE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHUYENMAI" EntityType="Self.KHUYENMAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAIVE" EntityType="Self.LOAIVE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUANLY" EntityType="Self.QUANLY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANBAY" EntityType="Self.SANBAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TUYENBAY" EntityType="Self.TUYENBAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VE" EntityType="Self.VE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CHUYENBAYY_HANGHANGKHONG" Association="Self.FK_CHUYENBAYY_HANGHANGKHONG">
+      <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONG" />
+      <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUYENBAYY_TUYENBAY" Association="Self.FK_CHUYENBAYY_TUYENBAY">
+      <End Role="TUYENBAY" EntitySet="TUYENBAY" />
+      <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_CB" Association="Self.FK_CT_CB">
+      <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+      <End Role="CHI_TIET_CHUYENBAY" EntitySet="CHI_TIET_CHUYENBAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HV" Association="Self.FK_CT_HV">
+      <End Role="HANGVE" EntitySet="HANGVE" />
+      <End Role="CHI_TIET_CHUYENBAY" EntitySet="CHI_TIET_CHUYENBAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_LV" Association="Self.FK_CT_LV">
+      <End Role="LOAIVE" EntitySet="LOAIVE" />
+      <End Role="CHI_TIET_CHUYENBAY" EntitySet="CHI_TIET_CHUYENBAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DANHGIA_KH" Association="Self.FK_DANHGIA_KH">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DANHGIA" EntitySet="DANHGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DATVE_MACB" Association="Self.FK_DATVE_MACB">
+      <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+      <End Role="DATVE" EntitySet="DATVE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DATVE_MAKH" Association="Self.FK_DATVE_MAKH">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DATVE" EntitySet="DATVE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DG_HANG" Association="Self.FK_DG_HANG">
+      <End Role="HANGHANGKHONG" EntitySet="HANGHANGKHONG" />
+      <End Role="DANHGIA" EntitySet="DANHGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GIOHANG_CB" Association="Self.FK_GIOHANG_CB">
+      <End Role="CHUYENBAY" EntitySet="CHUYENBAY" />
+      <End Role="GIOHANG" EntitySet="GIOHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GIOHANG_KH" Association="Self.FK_GIOHANG_KH">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="GIOHANG" EntitySet="GIOHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GIOHANG_KHUYENMAI" Association="Self.FK_GIOHANG_KHUYENMAI">
+      <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
+      <End Role="GIOHANG" EntitySet="GIOHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUANLY_MAKH" Association="Self.FK_QUANLY_MAKH">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUANLY_TAIKHOAN" Association="Self.FK_QUANLY_TAIKHOAN">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="QUANLY" EntitySet="QUANLY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_THANHTOAN_MAVE" Association="Self.FK_THANHTOAN_MAVE">
+      <End Role="VE" EntitySet="VE" />
+      <End Role="THANHTOAN" EntitySet="THANHTOAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TUYENBAY_SANBAY1" Association="Self.FK_TUYENBAY_SANBAY1">
+      <End Role="SANBAY" EntitySet="SANBAY" />
+      <End Role="TUYENBAY" EntitySet="TUYENBAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TUYENBAY_SANBAY2" Association="Self.FK_TUYENBAY_SANBAY2">
+      <End Role="SANBAY" EntitySet="SANBAY" />
+      <End Role="TUYENBAY" EntitySet="TUYENBAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VE_DATVE" Association="Self.FK_VE_DATVE">
+      <End Role="DATVE" EntitySet="DATVE" />
+      <End Role="VE" EntitySet="VE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VE_SANBAY" Association="Self.FK_VE_SANBAY">
+      <End Role="SANBAY" EntitySet="SANBAY" />
+      <End Role="VE" EntitySet="VE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

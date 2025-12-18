@@ -1,0 +1,403 @@
+﻿@model PagedList.IPagedList<AirLineBookingSystemProject_Group03.Models.FlightSearchViewModel> 
+@using PagedList.Mvc;
+@using PagedList;
+@{
+    ViewBag.Title = "Tìm chuyến bay";
+}
+
+@section styles {
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+    <style>
+        :root {
+            --primary: #1b5e20;
+            --hover: #2e7d32;
+            --bg-light: #f4f7f6;
+        }
+
+        body {
+            background-color: var(--bg-light);
+        }
+
+        .search-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .form-control-lg {
+            font-size: 1rem;
+            border-radius: 8px;
+        }
+
+        .btn-search {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+            .btn-search:hover {
+                background-color: var(--hover);
+                color: white;
+            }
+
+        /* FLIGHT CARD */
+        .flight-card {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .flight-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(27, 94, 32, 0.1);
+                border-color: var(--primary);
+            }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Cột Logo */
+        .airline-logo img {
+            width: 60px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .airline-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Cột Thời gian */
+        .time-big {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .city-small {
+            font-size: 0.9rem;
+            color: #777;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .duration-line {
+            position: relative;
+            height: 1px;
+            background: #ccc;
+            margin: 15px 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .duration-line i {
+                position: absolute;
+                top: -8px;
+                right: 0;
+                color: var(--primary);
+            }
+
+        .duration-text {
+            font-size: 0.8rem;
+            color: #555;
+            background: #fff;
+            padding: 0 5px;
+            position: relative;
+            top: -10px;
+        }
+
+        .price-tag {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #d32f2f;
+        }
+
+        .price-label {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .btn-choose {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            padding: 8px 25px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+            .btn-choose:hover {
+                background-color: var(--primary);
+                color: white;
+            }
+
+        .pagination-container {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .pagination {
+            display: flex;
+            padding-left: 0;
+            list-style: none;
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 50px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            gap: 8px; 
+        }
+
+        .pagination li {
+            display: inline-block;
+        }
+
+        .pagination li a,
+        .pagination li span {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 45px; 
+            height: 45px;
+            padding: 0 15px;
+            border-radius: 50px; 
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #555;
+            background-color: transparent;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 2px solid transparent;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .pagination li a:hover {
+            color: var(--primary);
+            background-color: #e8f5e9;
+            transform: translateY(-5px); 
+            box-shadow: 0 5px 15px rgba(27, 94, 32, 0.2); 
+        }
+
+        .pagination li.active span {
+            background: linear-gradient(135deg, var(--primary), var(--hover));
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(27, 94, 32, 0.4); 
+            transform: scale(1.1);
+            border-color: transparent;
+            cursor: default;
+        }
+
+        .pagination li.disabled span {
+            color: #ccc;
+            background-color: transparent;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+            .pagination > .active > a,
+            .pagination > .active > span,
+            .pagination > .active > a:hover,
+            .pagination > .active > span:hover,
+            .pagination > .active > a:focus,
+            .pagination > .active > span:focus,
+            .pagination > li.active > a,
+            .pagination > li.active > span {
+                background-color: var(--primary) !important;
+                background: linear-gradient(135deg, var(--primary), var(--hover)) !important; 
+                border-color: var(--primary) !important;
+                color: #fff !important;
+                box-shadow: 0 5px 15px rgba(27, 94, 32, 0.4) !important; 
+                transform: scale(1.1); 
+                cursor: default;
+                border-radius: 50% !important; 
+            }
+
+            .pagination > .disabled > span,
+            .pagination > .disabled > a,
+            .pagination > .disabled > a:hover,
+            .pagination > .disabled > a:focus {
+                color: #ccc !important;
+                background-color: transparent !important;
+                border-color: transparent !important;
+                cursor: not-allowed;
+                box-shadow: none !important;
+                transform: none !important;
+            }
+        @@keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+}
+
+<div class="container py-4">
+
+    <div class="search-container">
+        <form action="@Url.Action("Flights", "Booking")" method="get">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label"><i class="fas fa-plane-departure"></i> Điểm đi</label>
+                    <input type="text" name="from" class="form-control form-control-lg" placeholder="Hồ Chí Minh..." value="@Request.QueryString["from"]">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label"><i class="fas fa-plane-arrival"></i> Điểm đến</label>
+                    <input type="text" name="to" class="form-control form-control-lg" placeholder="Hà Nội..." value="@Request.QueryString["to"]">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label"><i class="far fa-calendar-alt"></i> Ngày đi</label>
+                    <input type="date" name="date" class="form-control form-control-lg" value="@Request.QueryString["date"]">
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-search btn-lg py-2">
+                        <i class="fas fa-search"></i> Tìm Chuyến Bay
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mb-3">
+            @if (Model.Any())
+            {
+                <h5 class="text-secondary">Tìm thấy <span class="text-success fw-bold">@Model.TotalItemCount</span> chuyến bay phù hợp</h5>
+            }
+            else
+            {
+                <div class="alert alert-warning text-center border-0 shadow-sm">
+                    <i class="fas fa-search-minus fa-2x mb-2"></i><br>
+                    Không tìm thấy chuyến bay nào theo yêu cầu của bạn.
+                </div>
+            }
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <div class="col-12">
+                <div class="flight-card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+
+                            <div class="col-md-2 text-center border-end">
+                                <div class="airline-logo text-center d-flex align-items-center justify-content-center" style="height: 60px; width: 80px;">
+
+                                    @if (!string.IsNullOrEmpty(item.LogoHang))
+                                    {
+                                        <img src="@item.LogoHang"
+                                             alt="@item.TenHang"
+                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                                             style="max-width: 100%; max-height: 100%; object-fit: contain;">
+
+                                        <div style="display:none; font-weight:bold; color:#1b5e20; font-size: 0.9rem; line-height: 1.2;">
+                                            @item.TenHang
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div style="font-weight:bold; color:#1b5e20; font-size: 0.9rem; line-height: 1.2;">
+                                            @item.TenHang
+                                        </div>
+                                    }
+
+                                </div>
+                                <div class="airline-name">@item.TenHang</div>
+                                <small class="text-muted" style="font-size: 0.7rem;">@item.MaChuyenBay</small>
+                            </div>
+
+                            <div class="col-md-6 text-center">
+                                <div class="d-flex justify-content-between align-items-center px-4">
+                                    <div class="text-center">
+                                        <div class="time-big">@item.GioDi.ToString("HH:mm")</div>
+                                        <div class="city-small">@item.NoiDi</div>
+                                    </div>
+
+                                    <div class="flex-grow-1 text-center px-3">
+                                        <div class="duration-text">@item.ThoiGianBay</div>
+                                        <div class="duration-line"><i class="fas fa-plane"></i></div>
+                                        <small class="text-success fw-bold">Bay thẳng</small>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <div class="time-big">@item.GioDen.ToString("HH:mm")</div>
+                                        <div class="city-small">@item.NoiDen</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 text-center border-start d-flex flex-column justify-content-center">
+                                @if (item.GiaThapNhat > 0)
+                                {
+                                    <div class="price-label">Giá chỉ từ</div>
+                                    <div class="price-tag mb-2">@item.GiaThapNhat.ToString("#,##0") <small>VNĐ</small></div>
+                                    <a href="@Url.Action("Details", "Booking", new { id = item.MaChuyenBay.Trim() })" class="btn btn-choose">
+                                        Chọn Chuyến <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <div class="text-muted fst-italic mb-2">Đang cập nhật giá...</div>
+                                    <button class="btn btn-secondary rounded-pill btn-sm" disabled>Tạm hết vé</button>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="pagination-container">
+        @Html.PagedListPager(Model, page => Url.Action("Flights",
+            new { page, from = Request.QueryString["from"], to = Request.QueryString["to"], date = Request.QueryString["date"] }),
+            new PagedListRenderOptions
+            {
+                LinkToPreviousPageFormat = "❮",
+                LinkToNextPageFormat = "❯",
+                LinkToFirstPageFormat = "Đầu",
+                LinkToLastPageFormat = "Cuối",
+                MaximumPageNumbersToDisplay = 5, 
+                DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+                DisplayLinkToLastPage = PagedListDisplayMode.Always,
+                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                UlElementClasses = new[] { "pagination" },
+                LiElementClasses = new[] { "page-item" }
+            })
+    </div>
+
+    <div class="text-center text-muted small mt-3" style="font-style: italic; opacity: 0.7;">
+        Đang hiển thị trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) trên tổng số @Model.PageCount trang
+    </div>
+</div>

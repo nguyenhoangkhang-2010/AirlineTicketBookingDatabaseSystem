@@ -1,0 +1,341 @@
+﻿@model IEnumerable<AirLineBookingSystemProject_Group03.Models.GIOHANG>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-4">
+    <h2 class="mb-4">
+        <i class="fas fa-shopping-cart text-primary"></i> Giỏ hàng của bạn
+    </h2>
+
+    @* Thông báo *@
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            <i class="fas fa-check-circle"></i> @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            <i class="fas fa-exclamation-circle"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="text-center py-5">
+            <i class="fas fa-shopping-cart fa-5x text-muted mb-3"></i>
+            <h4 class="text-muted">Giỏ hàng trống</h4>
+            <p class="text-muted">Bạn chưa có vé nào trong giỏ hàng</p>
+            <a href="@Url.Action("Index", "Flight")" class="btn btn-primary btn-lg mt-3">
+                <i class="fas fa-plane"></i> Tìm chuyến bay
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @* Danh sách sản phẩm *@
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-ticket-alt"></i> Vé máy bay (@Model.Sum(m => m.SOLUONG ?? 0) vé)</span>
+                        <button class="btn btn-sm btn-outline-light" onclick="clearCart()">
+                            <i class="fas fa-trash"></i> Xóa tất cả
+                        </button>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Chuyến bay</th>
+                                        <th>Loại vé</th>
+                                        <th>Hạng vé</th>
+                                        <th class="text-center">Số lượng</th>
+                                        <th class="text-end">Đơn giá</th>
+                                        <th class="text-end">Thành tiền</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        var chuyenBay = item.CHUYENBAY;
+                                        var tuyenBay = chuyenBay?.TUYENBAY;
+                                        var sanBayDi = tuyenBay?.SANBAY;
+                                        var sanBayDen = tuyenBay?.SANBAY1;
+                                        var hangHK = chuyenBay?.HANGHANGKHONG;
+
+                                        string loaiVeText = item.LOAIVE?.Trim() == "ADT" ? "Người lớn" :
+                                                          item.LOAIVE?.Trim() == "CHD" ? "Trẻ em" :
+                                                          item.LOAIVE?.Trim() == "INF" ? "Em bé" : item.LOAIVE;
+
+                                        string hangVeText = item.HANGVE?.Trim() == "ECO" ? "Phổ thông" :
+                                                           item.HANGVE?.Trim() == "BUS" ? "Thương gia" :
+                                                           item.HANGVE?.Trim() == "VIP" ? "Hạng nhất" : item.HANGVE;
+
+                                        decimal donGia = item.GIATIEN_SAUKM ?? item.GIATIEN ?? 0;
+                                        decimal thanhTien = donGia * (item.SOLUONG ?? 1);
+
+                                        <tr id="row-@item.ID.Trim()">
+                                            <td>
+                                                <div class="fw-bold text-primary">@chuyenBay?.MACHUYENBAY?.Trim()</div>
+                                                <small class="text-muted">
+                                                    @sanBayDi?.THANHPHO → @sanBayDen?.THANHPHO
+                                                </small>
+                                                <br />
+                                                <small class="text-muted">
+                                                    <i class="fas fa-plane"></i> @hangHK?.TENHANG
+                                                </small>
+                                                <br />
+                                                <small class="text-muted">
+                                                    <i class="far fa-clock"></i>
+                                                    @(chuyenBay?.THOIGIANXUATPHAT?.ToString("dd/MM/yyyy HH:mm"))
+                                                </small>
+                                            </td>
+                                            <td>
+                                                <span class="badge @(item.LOAIVE?.Trim() == "ADT" ? "bg-primary" :
+                                                                     item.LOAIVE?.Trim() == "CHD" ? "bg-info" : "bg-warning")">
+                                                    @loaiVeText
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="badge @(item.HANGVE?.Trim() == "VIP" ? "bg-danger" :
+                                                                     item.HANGVE?.Trim() == "BUS" ? "bg-warning text-dark" : "bg-secondary")">
+                                                    @hangVeText
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="input-group input-group-sm" style="width: 120px;">
+                                                    <button class="btn btn-outline-secondary" type="button"
+                                                            onclick="updateQty('@item.ID.Trim()', -1)">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                    <input type="text" class="form-control text-center qty-input"
+                                                           id="qty-@item.ID.Trim()"
+                                                           value="@item.SOLUONG" readonly>
+                                                    <button class="btn btn-outline-secondary" type="button"
+                                                            onclick="updateQty('@item.ID.Trim()', 1)">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td class="text-end">
+                                                @if (item.GIATIEN_SAUKM.HasValue && item.GIATIEN_SAUKM < item.GIATIEN)
+                                                {
+                                                    <small class="text-decoration-line-through text-muted">
+                                                        @string.Format("{0:N0}đ", item.GIATIEN)
+                                                    </small>
+                                                    <br />
+                                                    <span class="text-danger fw-bold">
+                                                        @string.Format("{0:N0}đ", item.GIATIEN_SAUKM)
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fw-bold">@string.Format("{0:N0}đ", item.GIATIEN)</span>
+                                                }
+                                            </td>
+                                            <td class="text-end">
+                                                <span class="fw-bold text-primary item-total" id="total-@item.ID.Trim()">
+                                                    @string.Format("{0:N0}đ", thanhTien)
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-danger"
+                                                        onclick="removeItem('@item.ID.Trim()')" title="Xóa">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <a href="@Url.Action("Index", "Flight")" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left"></i> Tiếp tục chọn vé
+                    </a>
+                </div>
+            </div>
+
+            @* Tổng tiền & Thanh toán *@
+            <div class="col-lg-4">
+                @* Mã khuyến mãi *@
+                <div class="card shadow-sm mb-3">
+                    <div class="card-header bg-success text-white">
+                        <i class="fas fa-tags"></i> Mã khuyến mãi
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="promoCode"
+                                   placeholder="Nhập mã khuyến mãi">
+                            <button class="btn btn-success" onclick="applyPromo()">
+                                Áp dụng
+                            </button>
+                        </div>
+                        <div id="promo-message" class="mt-2"></div>
+                    </div>
+                </div>
+
+                @* Tổng tiền *@
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <i class="fas fa-receipt"></i> Tổng đơn hàng
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal">@string.Format("{0:N0}đ", ViewBag.TongTienGoc)</span>
+                        </div>
+
+                        @if ((decimal)ViewBag.TienGiam > 0)
+                        {
+                            <div class="d-flex justify-content-between mb-2 text-success">
+                                <span>Giảm giá:</span>
+                                <span id="discount">-@string.Format("{0:N0}đ", ViewBag.TienGiam)</span>
+                            </div>
+                        }
+
+                        <hr />
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="fw-bold fs-5">Tổng cộng:</span>
+                            <span class="fw-bold fs-5 text-primary" id="grand-total">
+                                @string.Format("{0:N0}đ", ViewBag.TongTienSauKM)
+                            </span>
+                        </div>
+
+                        <a href="@Url.Action("Index", "Checkout")" class="btn btn-primary btn-lg w-100">
+                            <i class="fas fa-credit-card"></i> Tiến hành thanh toán
+                        </a>
+
+                        <div class="mt-3 text-center">
+                            <small class="text-muted">
+                                <i class="fas fa-shield-alt"></i> Thanh toán an toàn & bảo mật
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+    // Cập nhật số lượng
+    function updateQty(id, change) {
+        var input = document.getElementById('qty-' + id);
+        var currentQty = parseInt(input.value) || 1;
+        var newQty = currentQty + change;
+
+        if (newQty < 1) {
+            if (confirm('Bạn có muốn xóa vé này khỏi giỏ hàng?')) {
+                removeItem(id);
+            }
+            return;
+        }
+
+        if (newQty > 9) {
+            alert('Số lượng tối đa là 9 vé!');
+            return;
+        }
+
+        $.post('@Url.Action("UpdateQuantity", "Cart")', { id: id, quantity: newQty }, function(response) {
+            if (response.success) {
+                input.value = newQty;
+                $('#total-' + id).text(formatMoney(response.itemTotal) + 'đ');
+                $('#grand-total').text(formatMoney(response.cartTotal) + 'đ');
+                $('#subtotal').text(formatMoney(response.cartTotal) + 'đ');
+                updateCartBadge(response.count);
+            } else {
+                alert(response.message);
+            }
+        });
+    }
+
+    // Xóa item
+    function removeItem(id) {
+        if (!confirm('Bạn có chắc muốn xóa vé này?')) return;
+
+        $.post('@Url.Action("RemoveItem", "Cart")', { id: id }, function(response) {
+            if (response.success) {
+                $('#row-' + id).fadeOut(300, function() {
+                    $(this).remove();
+                    if ($('tbody tr').length === 0) {
+                        location.reload();
+                    }
+                });
+                $('#grand-total').text(formatMoney(response.total) + 'đ');
+                $('#subtotal').text(formatMoney(response.total) + 'đ');
+                updateCartBadge(response.count);
+            } else {
+                alert(response.message);
+            }
+        });
+    }
+
+    // Xóa tất cả
+    function clearCart() {
+        if (!confirm('Bạn có chắc muốn xóa toàn bộ giỏ hàng?')) return;
+
+        $.post('@Url.Action("ClearCart", "Cart")', function(response) {
+            if (response.success) {
+                location.reload();
+            }
+        });
+    }
+
+    // Áp dụng mã khuyến mãi
+    function applyPromo() {
+        var code = $('#promoCode').val().trim();
+        if (!code) {
+            $('#promo-message').html('<span class="text-danger">Vui lòng nhập mã!</span>');
+            return;
+        }
+
+        $.post('@Url.Action("ApplyPromotion", "Cart")', { promoCode: code }, function(response) {
+            if (response.success) {
+                $('#promo-message').html('<span class="text-success"><i class="fas fa-check"></i> ' + response.message + '</span>');
+                $('#subtotal').text(formatMoney(response.tongGoc) + 'đ');
+                $('#grand-total').text(formatMoney(response.tongSauKM) + 'đ');
+
+                // Hiển thị giảm giá nếu có
+                if (response.tienGiam > 0) {
+                    var discountHtml = '<div class="d-flex justify-content-between mb-2 text-success">' +
+                                      '<span>Giảm giá:</span>' +
+                                      '<span id="discount">-' + formatMoney(response.tienGiam) + 'đ</span></div>';
+                    if ($('#discount').length === 0) {
+                        $('hr').before(discountHtml);
+                    } else {
+                        $('#discount').text('-' + formatMoney(response.tienGiam) + 'đ');
+                    }
+                }
+
+                // Reload để cập nhật giá
+                setTimeout(function() { location.reload(); }, 1500);
+            } else {
+                $('#promo-message').html('<span class="text-danger"><i class="fas fa-times"></i> ' + response.message + '</span>');
+            }
+        });
+    }
+
+    // Format tiền
+    function formatMoney(amount) {
+        return new Intl.NumberFormat('vi-VN').format(amount);
+    }
+
+    // Cập nhật badge giỏ hàng trên header
+    function updateCartBadge(count) {
+        $('.cart-count').text(count);
+    }
+    </script>
+}

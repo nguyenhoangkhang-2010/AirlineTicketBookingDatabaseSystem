@@ -1,0 +1,269 @@
+﻿﻿@{
+    ViewBag.Title = "Đánh giá khách hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-4 text-center mb-3">
+                <i class="fas fa-star text-warning"></i> Đánh giá khách hàng
+            </h1>
+            <p class="text-center text-muted">
+                Chia sẻ trải nghiệm của bạn về các chuyến bay đã sử dụng
+            </p>
+        </div>
+    </div>
+
+    <!-- Thông báo -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-circle"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <!-- Form đánh giá -->
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-edit"></i> Viết đánh giá
+                    </h5>
+                </div>
+                <div class="card-body">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (ViewBag.MaKH != null)
+                        {
+                            <p class="text-muted mb-3">
+                                <i class="fas fa-user"></i> Đánh giá với tư cách: <strong>@(ViewBag.HoTen ?? User.Identity.Name)</strong>
+                            </p>
+
+                            using (Html.BeginForm("Reviews", "Home", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="mb-3">
+                                    <label for="maHang" class="form-label">
+                                        <i class="fas fa-plane"></i> Hãng hàng không <span class="text-danger">*</span>
+                                    </label>
+                                    @Html.DropDownList("maHang", (SelectList)ViewBag.HangHangKhongList, "-- Chọn hãng hàng không --", new { @class = "form-select", required = "required", id = "maHang" })
+                                    <div class="invalid-feedback">
+                                        Vui lòng chọn hãng hàng không
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">
+                                        <i class="fas fa-star"></i> Số sao đánh giá <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="star-rating">
+                                        @for (int i = 5; i >= 1; i--)
+                                        {
+                                            <input type="radio" name="soSao" id="star@i" value="@i" required />
+                                            <label for="star@i" class="star-label" title="@i sao">
+                                                <i class="fas fa-star"></i>
+                                            </label>
+                                        }
+                                    </div>
+                                    <div class="invalid-feedback d-block">
+                                        Vui lòng chọn số sao đánh giá
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="noiDung" class="form-label">
+                                        <i class="fas fa-comment"></i> Nội dung đánh giá <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea class="form-control" id="noiDung" name="noiDung" rows="5"
+                                              placeholder="Chia sẻ trải nghiệm của bạn về chuyến bay..." required></textarea>
+                                    <div class="invalid-feedback">
+                                        Vui lòng nhập nội dung đánh giá
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-paper-plane"></i> Gửi đánh giá
+                                </button>
+                            }
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Tài khoản của bạn chưa có thông tin khách hàng. Vui lòng cập nhật thông tin trong phần tài khoản.
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Bạn cần đăng nhập để đánh giá</strong>
+                            <p class="mb-0 mt-2">
+                                <a href="@Url.Action("Login", "Account")" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-sign-in-alt"></i> Đăng nhập ngay
+                                </a>
+                            </p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Danh sách đánh giá -->
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">
+                        <i class="fas fa-list"></i> Tất cả đánh giá (@(ViewBag.DanhGiaList != null ? ((List<AirLineBookingSystemProject_Group03.Models.DANHGIA>)ViewBag.DanhGiaList).Count : 0))
+                    </h5>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.DanhGiaList != null && ((List<AirLineBookingSystemProject_Group03.Models.DANHGIA>)ViewBag.DanhGiaList).Count > 0)
+                    {
+                        <div class="reviews-list">
+                            @foreach (var danhGia in (List<AirLineBookingSystemProject_Group03.Models.DANHGIA>)ViewBag.DanhGiaList)
+                            {
+                                <div class="review-item mb-4 pb-4 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <div>
+                                            <h6 class="mb-1">
+                                                <i class="fas fa-user-circle text-primary"></i>
+                                                @(danhGia.KHACHHANG?.HOTEN ?? "Khách hàng")
+                                            </h6>
+                                            <small class="text-muted">
+                                                <i class="fas fa-plane"></i>
+                                                @(danhGia.HANGHANGKHONG?.TENHANG ?? "N/A")
+                                            </small>
+                                        </div>
+                                        <div class="text-end">
+                                            <div class="star-display mb-1">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    if (i <= (danhGia.SOSAO ?? 0))
+                                                    {
+                                                        <i class="fas fa-star text-warning"></i>
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="far fa-star text-muted"></i>
+                                                    }
+                                                }
+                                            </div>
+                                            <small class="text-muted">
+                                                <i class="fas fa-calendar"></i>
+                                                @(danhGia.NGAYDG?.ToString("dd/MM/yyyy HH:mm") ?? "")
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0">@danhGia.NOIDUNG</p>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-5">
+                            <i class="fas fa-comments fa-3x text-muted mb-3"></i>
+                            <p class="text-muted">Chưa có đánh giá nào. Hãy là người đầu tiên đánh giá!</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+            .star-rating label:hover,
+            .star-rating label:hover ~ label,
+            .star-rating input[type="radio"]:checked ~ label {
+                color: #ffc107;
+            }
+
+    .star-display {
+        font-size: 1.2rem;
+    }
+
+    .review-item {
+        transition: background-color 0.2s;
+    }
+
+        .review-item:hover {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            margin-left: -1rem;
+            margin-right: -1rem;
+            border-radius: 0.25rem;
+        }
+
+    .card {
+        border: none;
+    }
+
+    .card-header {
+        border-bottom: 2px solid #dee2e6;
+    }
+</style>
+
+<script>
+    // Validation cho form
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+
+    // Cập nhật màu sao khi chọn
+    document.querySelectorAll('input[name="soSao"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            var selectedValue = this.value;
+            document.querySelectorAll('.star-rating label').forEach(function (label, index) {
+                var starValue = 5 - index;
+                if (starValue <= selectedValue) {
+                    label.style.color = '#ffc107';
+                } else {
+                    label.style.color = '#ddd';
+                }
+            });
+        });
+    });
+</script>

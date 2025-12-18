@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --admin-primary: #1b5e20;
+            --admin-dark: #003300;
+            --admin-light: #e8f5e9;
+        }
+
+        body {
+            background: #f4f6f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            height: 100vh;
+            width: 260px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: var(--admin-primary);
+            color: white;
+            transition: 0.3s;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-brand {
+            text-align: center;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 10px;
+        }
+
+            .sidebar-brand h4 {
+                font-weight: 800;
+                letter-spacing: 1px;
+                margin: 0;
+                font-size: 22px;
+            }
+
+            .sidebar-brand i {
+                color: #81c784;
+                margin-right: 8px;
+            }
+
+        /* Menu Links */
+        .sidebar-menu {
+            padding: 0;
+            list-style: none;
+        }
+
+        .menu-header {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            padding: 15px 25px 5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-link {
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
+            display: block;
+            transition: 0.2s;
+            border-left: 4px solid transparent;
+        }
+
+            .sidebar-link:hover {
+                background: rgba(255,255,255,0.1);
+                color: white;
+                padding-left: 30px;
+            }
+
+            .sidebar-link.active {
+                background: var(--admin-dark);
+                color: white;
+                border-left-color: #81c784;
+            }
+
+            .sidebar-link i {
+                width: 25px;
+                text-align: center;
+                margin-right: 5px;
+            }
+
+        /* MAIN CONTENT */
+        .main-content {
+            margin-left: 260px;
+            padding: 30px;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            background: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h4><i class="fas fa-plane-departure"></i> SkyBooker </h4>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li>
+                <a href="@Url.Action("Index", "Dashboard", new { area = "Admin" })" class="sidebar-link @(ViewBag.Active == "Dashboard" ? "active" : "")">
+                    <i class="fas fa-tachometer-alt"></i> Tổng quan
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "Home", new { area = "" })" class="sidebar-link">
+                    <i class="fas fa-home"></i> Về Trang Chủ Web
+                </a>
+            </li>
+
+            <li class="menu-header">Vận Hành Bay</li>
+            <li>
+                <a href="@Url.Action("Create", "ChuyenBay", new { area = "Admin" })" class="sidebar-link @(ViewBag.Active == "CreateFlight" ? "active" : "")">
+                    <i class="fas fa-plus-circle"></i> Thêm Chuyến Bay
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "ChuyenBay", new { area = "Admin" })" class="sidebar-link @(ViewBag.Active == "ManageFlights" ? "active" : "")">
+                    <i class="fas fa-list-alt"></i> Danh Sách Chuyến Bay
+                </a>
+            </li>
+
+            <li class="menu-header">Đối Tác</li>
+            <li>
+                <a href="@Url.Action("Create", "HangBay", new { area = "Admin" })" class="sidebar-link @(ViewBag.Active == "CreateAirlines" ? "active" : "")">
+                    <i class="fas fa-plane"></i> Thêm Hãng Bay
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "HangBay", new { area = "Admin" })" class="sidebar-link @(ViewBag.Active == "ManageAirlines" ? "active" : "")">
+                    <i class="fas fa-building"></i> Danh Sách Hãng
+                </a>
+            </li>
+            <li class="menu-header mt-3">Hệ Thống Bay</li>
+
+            <li>
+                <a href="@Url.Action("Index", "SanBay", new { area = "Admin" })"
+                   class="sidebar-link @(ViewContext.RouteData.Values["controller"].ToString() == "SanBay" ? "active" : "")">
+                    <i class="fas fa-plane-arrival me-2"></i> Quản lý sân bay
+                </a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Index", "TuyenBay", new { area = "Admin" })"
+                   class="sidebar-link @(ViewContext.RouteData.Values["controller"].ToString() == "TuyenBay" ? "active" : "")">
+                    <i class="fas fa-route me-2"></i> Quản lý tuyến bay
+                </a>
+            </li>
+
+            <li class="menu-header">Khách Hàng</li>
+            <li>
+                <a href="@Url.Action("Index", "QuanLyTaiKhoan", new { area = "Admin" })" class="sidebar-link  @(ViewBag.Active == "ManageCustomers" ? "active" : "")">
+                    <i class="fas fa-users me-2"></i> Quản lý tài khoản
+                </a>
+            </li>
+            <li class="menu-header">Phục hồi dữ liệu</li>
+            <li>
+                <a href="@Url.Action("Index", "Backup", new { area = "Admin" })" class="sidebar-link">
+                    <i class="fas fa-database"></i> Back up
+                </a>
+            </li>
+
+            <li class="menu-header">Khác</li>
+            <li>
+                <a href="@Url.Action("Index", "KhuyenMai", new { area = "Admin" })"
+                   class="sidebar-link @(ViewContext.RouteData.Values["controller"].ToString() == "KhuyenMai" ? "active" : "")">
+                    <i class="fas fa-tags me-2"></i> Quản lý khuyến mãi
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Logout", "Account", new { area = "" })" class="sidebar-link text-warning">
+                    <i class="fas fa-sign-out-alt"></i> Đăng Xuất
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="topbar">
+            <h4 style="color: var(--admin-primary); margin:0; font-weight:700;">@ViewBag.Title</h4>
+            <div class="d-flex align-items-center">
+                <span class="me-3 text-muted">Xin chào, <strong>@User.Identity.Name</strong></span>
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width:40px; height:40px; border:1px solid #ddd;">
+                    <i class="fas fa-user text-success"></i>
+                </div>
+            </div>
+        </div>
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show">
+                <i class="fas fa-check-circle me-2"></i> @TempData["Success"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show">
+                <i class="fas fa-exclamation-triangle me-2"></i> @TempData["Error"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        @RenderBody()
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var message = '@Html.Raw(TempData["AdminMessage"] as string)';
+        var type = '@(TempData["AlertType"] as string)';
+
+        if (message && message.length > 0) {
+            Swal.fire({
+                title: type === 'success' ? 'Thành công!' : 'Đã xảy ra lỗi!',
+                text: message,
+                icon: type || 'success',
+
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+
+                showClass: { popup: 'animate__animated animate__fadeInDown' },
+                hideClass: { popup: 'animate__animated animate__fadeOutUp' },
+
+                timer: 3000,
+                timerProgressBar: true,
+
+                backdrop: `rgba(0,0,0,0.4)`
+            });
+        }
+    });
+</script>
+</html>

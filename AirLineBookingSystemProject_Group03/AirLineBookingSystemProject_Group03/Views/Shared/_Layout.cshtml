@@ -1,0 +1,289 @@
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - SkyBooker</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Site CSS -->
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="timber-green-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <i class="fas fa-plane"></i> SkyBooker
+            </a>
+
+            <!-- Navigation Menu (Left Side) -->
+            <nav class="navbar navbar-expand-lg p-0">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav main-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Home")">
+                                <i class="fas fa-home"></i> Trang chủ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Flights", "Booking")">
+                                <i class="fas fa-ticket-alt"></i> Vé máy bay
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Promotion")">
+                                <i class="fas fa-percent"></i> Khuyến mãi
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Contact", "Home")">
+                                <i class="fas fa-phone-alt"></i> Liên hệ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("About", "Home")">
+                                <i class="fas fa-info-circle"></i> Về chúng tôi
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Auth Section (Right Side) -->
+            <div class="auth-section">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="user-welcome">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Xin chào, @User.Identity.GetUserName()</span>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#" class="user-dropdown" data-bs-toggle="dropdown">
+                            <div class="user-avatar">
+                                @User.Identity.Name.Substring(0, 1).ToUpper()
+                            </div>
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="@Url.Action("Profile", "Account")">
+                                    <i class="fas fa-user"></i> Tài khoản
+                                </a>
+                            </li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <a class="dropdown-item" href="@Url.Action("Index", "Dashboard", new { area = "Admin" })">
+                                        <i class="fas fa-user-shield"></i> Quản Lý
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="@Url.Action("Index", "Backup", new { area = "Admin" })">
+                                        <i class="fas fa-user-shield"></i> Phục hồi dữ liệu
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a class="dropdown-item" href="@Url.Action("MyFlights", "Account")">
+                                    <i class="fas fa-plane"></i> Chuyến bay của tôi
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="@Url.Action("Cart", "Booking")">
+                                    <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="@Url.Action("Logout", "Account")">
+                                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div class="auth-buttons">
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-login">
+                            <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                        </a>
+                        <a href="@Url.Action("Register", "Account")" class="btn btn-register">
+                            <i class="fas fa-user-plus"></i> Đăng ký
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- SIDEBAR -->
+                <div class="col-lg-3 col-xl-2">
+                    <aside class="sidebar">
+                        <h3 class="sidebar-title">
+                            <i class="fas fa-user-circle"></i> Tài khoản
+                        </h3>
+                        <ul class="sidebar-menu">
+                            @*<li class="sidebar-item">
+                                <a href="@Url.Action("History", "Booking")" class="sidebar-link">
+                                    <i class="fas fa-plane-departure"></i>
+                                    <span>Chuyến bay của tôi</span>
+                                </a>
+                            </li>*@
+                            <li class="sidebar-item">
+                                <a href="@Url.Action("Cart", "Booking")" class="sidebar-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Giỏ hàng</span>
+                                    @if (ViewBag.CartItemCount > 0)
+                                    {
+                                        <span class="badge bg-warning ms-auto cart-sidebar-badge">@ViewBag.CartItemCount</span>
+                                    }
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="@Url.Action("History", "Booking")" class="sidebar-link">
+                                    <i class="fas fa-history"></i>
+                                    <span>Lịch sử đặt vé</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="@Url.Action("Reviews", "Home")" class="sidebar-link">
+                                    <i class="fas fa-star"></i>
+                                    <span>Đánh giá của khách hàng</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="@Url.Action("Profile", "Account")" class="sidebar-link">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Cài đặt tài khoản</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+
+                <!-- MAIN CONTENT AREA -->
+                <div class="col-lg-9 col-xl-10">
+                    <div class="content-wrapper">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Footer Top -->
+            <div class="row footer-top">
+                <!-- Column 1: Navigation -->
+                <div class="col-md-4 col-lg-3 footer-column">
+                    <h5>SkyBooker</h5>
+                    <ul class="footer-links">
+                        <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-chevron-right"></i> Trang chủ</a></li>
+                        <li><a href="@Url.Action("Flights", "Booking")"><i class="fas fa-chevron-right"></i> Vé máy bay</a></li>
+                        <li><a href="@Url.Action("Index", "Promotion")"><i class="fas fa-chevron-right"></i> Khuyến mãi</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")"><i class="fas fa-chevron-right"></i> Liên hệ</a></li>
+                        <li><a href="@Url.Action("About", "Home")"><i class="fas fa-chevron-right"></i> Về chúng tôi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Airline Partners -->
+                <div class="col-md-4 col-lg-4 footer-column">
+                    <h5>Đối tác hàng không</h5>
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <i class="fas fa-plane fa-2x text-primary"></i>
+                            <span class="visually-hidden">Vietnam Airlines</span>
+                        </div>
+                        <div class="partner-logo">
+                            <i class="fas fa-plane fa-2x text-danger"></i>
+                            <span class="visually-hidden">Bamboo Airways</span>
+                        </div>
+                        <div class="partner-logo">
+                            <i class="fas fa-plane fa-2x text-success"></i>
+                            <span class="visually-hidden">Vietjet Air</span>
+                        </div>
+                        <div class="partner-logo">
+                            <i class="fas fa-plane fa-2x text-info"></i>
+                            <span class="visually-hidden">Jetstar Pacific</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Banking Partners -->
+                <div class="col-md-4 col-lg-5 footer-column">
+                    <h5>Đối tác ngân hàng</h5>
+                    <div class="partner-logos">
+                        <div class="partner-logo">
+                            <i class="fas fa-university fa-2x text-dark"></i>
+                            <span class="visually-hidden">Vietcombank</span>
+                        </div>
+                        <div class="partner-logo">
+                            <i class="fas fa-credit-card fa-2x text-primary"></i>
+                            <span class="visually-hidden">Techcombank</span>
+                        </div>
+                        <div class="partner-logo">
+                            <i class="fas fa-landmark fa-2x text-success"></i>
+                            <span class="visually-hidden">BIDV</span>
+                        </div>
+                        <div class="partner-logo">
+                            <i class="fas fa-money-check-alt fa-2x text-warning"></i>
+                            <span class="visually-hidden">VPBank</span>
+                        </div>
+                        <div class="partner-logo">
+                            <i class="fas fa-piggy-bank fa-2x text-danger"></i>
+                            <span class="visually-hidden">MB Bank</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="copyright">
+                            &copy; @DateTime.Now.Year SkyBooker - Đặt vé máy bay trực tuyến.
+                            Điện thoại: 1900 1234 | Email: support@skybooker.vn
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Site Scripts -->
+    <script src="~/Scripts/site.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

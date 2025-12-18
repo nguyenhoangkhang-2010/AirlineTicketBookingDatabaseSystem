@@ -1,0 +1,252 @@
+﻿@{
+    ViewBag.Title = "Đặt vé thành công";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var maDatVe = ViewBag.MaDatVe as string ?? "N/A";
+    var hoTen = ViewBag.HoTen as string ?? "Quý khách";
+    var email = ViewBag.Email as string ?? "N/A";
+    var soDienThoai = ViewBag.SoDienThoai as string ?? "N/A";
+    decimal tongTien = ViewBag.TongTien != null ? (decimal)ViewBag.TongTien : 0;
+    DateTime ngayDat = ViewBag.NgayDat != null ? (DateTime)ViewBag.NgayDat : DateTime.Now;
+    int soVe = ViewBag.SoVe != null ? (int)ViewBag.SoVe : 0;
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Thông báo thành công -->
+            <div class="text-center mb-5">
+                <div class="success-animation">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark-check" fill="none" d="m14.1 27.2 7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
+
+                <h1 class="display-4 text-success mt-4">
+                    Đặt vé thành công!
+                </h1>
+                <p class="lead text-muted">
+                    Cảm ơn quý khách <strong>@hoTen</strong> đã sử dụng dịch vụ của chúng tôi.
+                </p>
+                <div class="my-4">
+                    <i class="fas fa-smile text-warning fa-3x"></i>
+                </div>
+                <h4 class="text-primary">
+                    <i class="fas fa-plane"></i> Chúc quý khách một chuyến bay vui vẻ và an toàn!
+                </h4>
+            </div>
+
+            <!-- Thông báo quan trọng -->
+            <div class="alert alert-info border-0 shadow-sm" role="alert">
+                <h5 class="alert-heading">
+                    <i class="fas fa-info-circle"></i> Thông tin quan trọng
+                </h5>
+                <hr />
+                <ul class="mb-0">
+                    <li class="mb-2">
+                        <i class="fas fa-envelope text-primary"></i>
+                        Vé điện tử đã được gửi đến email <strong>@email</strong>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-inbox text-primary"></i>
+                        Vui lòng kiểm tra hộp thư (bao gồm cả thư rác)
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-id-card text-primary"></i>
+                        Mang theo CMND/CCCD khi làm thủ tục check-in
+                    </li>
+                    <li class="mb-0">
+                        <i class="fas fa-clock text-primary"></i>
+                        Có mặt tại sân bay trước giờ khởi hành ít nhất 2 tiếng
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Nút điều hướng -->
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4 mb-5">
+                <a href="@Url.Action("Index", "Home")" class="btn btn-primary btn-lg">
+                    <i class="fas fa-home"></i> Về trang chủ
+                </a>
+                <a href="@Url.Action("Flights", "Booking")" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-plane"></i> Đặt vé khác
+                </a>
+                <button class="btn btn-outline-secondary btn-lg" onclick="window.print()">
+                    <i class="fas fa-print"></i> In vé
+                </button>
+            </div>
+
+            <!-- Đánh giá dịch vụ -->
+            <div class="card border-0 bg-light shadow-sm mb-5">
+                <div class="card-body text-center py-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        Bạn hài lòng với dịch vụ của chúng tôi?
+                    </h5>
+                    <div class="rating-stars mb-3">
+                        <i class="fas fa-star fa-2x star" data-rating="1"></i>
+                        <i class="fas fa-star fa-2x star" data-rating="2"></i>
+                        <i class="fas fa-star fa-2x star" data-rating="3"></i>
+                        <i class="fas fa-star fa-2x star" data-rating="4"></i>
+                        <i class="fas fa-star fa-2x star" data-rating="5"></i>
+                    </div>
+                    <p class="text-muted mb-0" id="ratingMessage">Click để đánh giá</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .success-animation {
+        margin: 0 auto;
+    }
+
+    .checkmark {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: block;
+        stroke-width: 2;
+        stroke: #4CAF50;
+        stroke-miterlimit: 10;
+        margin: 0 auto;
+        box-shadow: inset 0px 0px 0px #4CAF50;
+        animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    }
+
+    .checkmark-circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke: #4CAF50;
+        fill: none;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    .checkmark-check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+
+    @@keyframes stroke {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @@keyframes scale {
+        0%, 100% {
+            transform: none;
+        }
+
+        50% {
+            transform: scale3d(1.1, 1.1, 1);
+        }
+    }
+
+    @@keyframes fill {
+        100% {
+            box-shadow: inset 0px 0px 0px 50px transparent;
+        }
+    }
+
+    .card {
+        border-radius: 15px;
+    }
+
+    .card-header {
+        border-radius: 15px 15px 0 0 !important;
+    }
+
+    .btn-lg {
+        padding: 12px 30px;
+        border-radius: 10px;
+    }
+
+    .star {
+        color: #ddd;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin: 0 5px;
+    }
+
+        .star:hover {
+            transform: scale(1.2);
+        }
+
+        .star.active {
+            color: #ffc107;
+        }
+
+    @@media print {
+        .btn,
+        .rating-stars,
+        nav,
+        footer,
+        .alert {
+            display: none !important;
+        }
+
+        .card {
+            border: 1px solid #ddd !important;
+            box-shadow: none !important;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var stars = document.querySelectorAll('.star');
+        var ratingMessage = document.getElementById('ratingMessage');
+        var rated = false;
+
+        stars.forEach(function (star) {
+            star.addEventListener('mouseover', function () {
+                if (rated) return;
+                var rating = parseInt(this.getAttribute('data-rating'));
+                highlightStars(rating);
+            });
+
+            star.addEventListener('mouseout', function () {
+                if (rated) return;
+                resetStars();
+            });
+
+            star.addEventListener('click', function () {
+                var rating = parseInt(this.getAttribute('data-rating'));
+                rated = true;
+                highlightStars(rating);
+
+                var messages = [
+                    'Rất tiếc khi bạn chưa hài lòng',
+                    'Cảm ơn góp ý của bạn',
+                    'Cảm ơn bạn đã đánh giá!',
+                    'Tuyệt vời! Cảm ơn bạn!',
+                    'Xuất sắc! Cảm ơn bạn rất nhiều!'
+                ];
+                ratingMessage.textContent = messages[rating - 1];
+                ratingMessage.classList.add('fw-bold', 'text-success');
+            });
+        });
+
+        function highlightStars(rating) {
+            stars.forEach(function (star, index) {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function resetStars() {
+            stars.forEach(function (star) {
+                star.classList.remove('active');
+            });
+        }
+    });
+</script>
